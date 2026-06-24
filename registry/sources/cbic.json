@@ -1,0 +1,14 @@
+{
+  "code": "cbic",
+  "enabled": true,
+  "priority": 1,
+  "type": "website",
+  "base_url": "https://cbic-gst.gov.in",
+  "fetch_strategy": "checksum",
+  "documents": [
+    {
+      "code": "gst_schedule_goods",
+      "url": "https://cbic-gst.gov.in/pdf/chapter-wise-rate-wise-gst-schedule-18.05.2017.pdf"
+    }
+  ]
+}
