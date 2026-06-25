@@ -1,0 +1,150 @@
+
+==========
+SERIAL
+==========
+S.
+No.
+2.
+2 
+(Meat and edible 
+meat offal)
+
+==========
+CHAPTER
+==========
+Chapter
+
+==========
+NIL
+==========
+[As
+per discussions in the 
+Nil
+All 
+goods 
+other 
+than in frozen state
+and put up in unit 
+containers
+.
+[0201
+Meat 
+of 
+bovine 
+animals, 
+fresh and chilled.
+0203
+Meat 
+of 
+swine, 
+fresh 
+or 
+chilled.
+0204
+Meat 
+of 
+sheep 
+or 
+goats, 
+fresh or chilled.
+0205
+Meat 
+of 
+horses, 
+asses, 
+mules 
+or 
+hinnies, 
+fresh or chilled.
+0206
+Edible 
+offal 
+of 
+bovi
+ne 
+animals, 
+swine, 
+sheep, 
+goats, 
+horses, 
+
+==========
+RATE5
+==========
+GST RATE SCHEDULE
+GST Council Meeting held on 18
+2
+5%
+-
+1.
+2.
+3.
+
+==========
+RATE12
+==========
+FOR GOODS
+12%
+All goods in frozen 
+state
+and 
+put 
+up 
+in 
+unit 
+containers
+[
+0202
+, 
+0203, 
+0204, 
+0205, 
+0206, 
+0207, 
+0208, 
+0209]
+Pig fat, free of lean 
+meat, and poultry fat, 
+not 
+rendered 
+or 
+otherwise 
+extracted, 
+salted, in brine, dried 
+or smoked 
+put up in 
+unit 
+containers 
+[0209]
+Meat 
+and 
+edible 
+meat offal, salted, in 
+brine, 
+dried 
+or 
+smoked; 
+edible 
+flours 
+and meals 
+of 
+meat 
+or 
+meat 
+offa
+l 
+
+==========
+RATE18
+==========
+th
+May, 2017
+]
+18%
+-
+
+==========
+RATE28
+==========
+28%
+-

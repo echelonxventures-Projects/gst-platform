@@ -1,0 +1,3848 @@
+{
+  "1006": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 21,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1006"
+      },
+      {
+        "page": 22,
+        "rate": 5,
+        "x": 22.633,
+        "text": "1006;"
+      }
+    ]
+  },
+  "1103": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 22,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1103"
+      },
+      {
+        "page": 22,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1103"
+      }
+    ]
+  },
+  "1105": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 22,
+        "rate": 0,
+        "x": 14.609,
+        "text": "1105,"
+      },
+      {
+        "page": 22,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1105"
+      },
+      {
+        "page": 23,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1105"
+      }
+    ]
+  },
+  "1106": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 22,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1106"
+      },
+      {
+        "page": 22,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1106"
+      },
+      {
+        "page": 23,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1106"
+      }
+    ]
+  },
+  "1201": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 23,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1201"
+      },
+      {
+        "page": 23,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1201"
+      }
+    ]
+  },
+  "1202": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 23,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1202"
+      },
+      {
+        "page": 23,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1202"
+      }
+    ]
+  },
+  "1204": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 24,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1204"
+      },
+      {
+        "page": 24,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1204"
+      }
+    ]
+  },
+  "1205": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 24,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1205"
+      },
+      {
+        "page": 24,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1205"
+      }
+    ]
+  },
+  "1206": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 24,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1206"
+      },
+      {
+        "page": 24,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1206"
+      }
+    ]
+  },
+  "1207": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 24,
+        "rate": 0,
+        "x": 11.691,
+        "text": "1207"
+      },
+      {
+        "page": 24,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1207"
+      }
+    ]
+  },
+  "1210": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 25,
+        "rate": 0,
+        "x": 13.371,
+        "text": "[1210]"
+      },
+      {
+        "page": 25,
+        "rate": 5,
+        "x": 18.091,
+        "text": "[1210]"
+      }
+    ]
+  },
+  "1211": {
+    "length": 4,
+    "rates": [
+      5,
+      0
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 25,
+        "rate": 5,
+        "x": 21.226,
+        "text": "[1211]"
+      },
+      {
+        "page": 26,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[1211]"
+      }
+    ]
+  },
+  "1212": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 26,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[1212]"
+      },
+      {
+        "page": 26,
+        "rate": 5,
+        "x": 18.091,
+        "text": "[1212"
+      }
+    ]
+  },
+  "1301": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 27,
+        "rate": 0,
+        "x": 11.691,
+        "text": "Shellac [1301]"
+      },
+      {
+        "page": 27,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1301"
+      },
+      {
+        "page": 27,
+        "rate": 5,
+        "x": 20.063,
+        "text": "[1301]"
+      }
+    ]
+  },
+  "1302": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 27,
+        "rate": 5,
+        "x": 18.091,
+        "text": "[1302]"
+      },
+      {
+        "page": 27,
+        "rate": 18,
+        "x": 34.284,
+        "text": "1302"
+      }
+    ]
+  },
+  "1507": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 28,
+        "rate": 0,
+        "x": 16.966,
+        "text": "[1507 to 1516]"
+      },
+      {
+        "page": 28,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1507"
+      }
+    ]
+  },
+  "1516": {
+    "length": 4,
+    "rates": [
+      0,
+      12,
+      5
+    ],
+    "occurrences": 5,
+    "entries": [
+      {
+        "page": 28,
+        "rate": 0,
+        "x": 16.966,
+        "text": "[1507 to 1516]"
+      },
+      {
+        "page": 30,
+        "rate": 12,
+        "x": 26.153,
+        "text": "1516"
+      },
+      {
+        "page": 30,
+        "rate": 12,
+        "x": 30.777,
+        "text": "1516;"
+      },
+      {
+        "page": 31,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1516"
+      },
+      {
+        "page": 31,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1516"
+      }
+    ]
+  },
+  "1518": {
+    "length": 4,
+    "rates": [
+      12,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 30,
+        "rate": 12,
+        "x": 26.153,
+        "text": "1518"
+      },
+      {
+        "page": 31,
+        "rate": 5,
+        "x": 18.091,
+        "text": "1518"
+      }
+    ]
+  },
+  "1701": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 32,
+        "rate": 0,
+        "x": 11.691,
+        "text": "(gur) [1701]"
+      },
+      {
+        "page": 32,
+        "rate": 5,
+        "x": 20.153,
+        "text": "1701]"
+      }
+    ]
+  },
+  "1702": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 33,
+        "rate": 5,
+        "x": 18.091,
+        "text": "[1702]"
+      },
+      {
+        "page": 33,
+        "rate": 18,
+        "x": 34.284,
+        "text": "under 1702 ["
+      }
+    ]
+  },
+  "1704": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 33,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[1704]"
+      },
+      {
+        "page": 33,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[1704]"
+      }
+    ]
+  },
+  "1901": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 34,
+        "rate": 5,
+        "x": 18.091,
+        "text": "[1901]"
+      },
+      {
+        "page": 34,
+        "rate": 18,
+        "x": 37.359,
+        "text": "[1901]"
+      }
+    ]
+  },
+  "1902": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 34,
+        "rate": 5,
+        "x": 18.091,
+        "text": "[1902]"
+      },
+      {
+        "page": 34,
+        "rate": 18,
+        "x": 38.426,
+        "text": "[1902]"
+      }
+    ]
+  },
+  "1904": {
+    "length": 4,
+    "rates": [
+      0,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 34,
+        "rate": 0,
+        "x": 13.754,
+        "text": "[1904]"
+      },
+      {
+        "page": 34,
+        "rate": 18,
+        "x": 38.237,
+        "text": "[1904]"
+      }
+    ]
+  },
+  "1905": {
+    "length": 4,
+    "rates": [
+      0,
+      5,
+      28
+    ],
+    "occurrences": 5,
+    "entries": [
+      {
+        "page": 34,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[1905]"
+      },
+      {
+        "page": 34,
+        "rate": 5,
+        "x": 22.043,
+        "text": "[1905]"
+      },
+      {
+        "page": 34,
+        "rate": 5,
+        "x": 21.26,
+        "text": "[1905"
+      },
+      {
+        "page": 35,
+        "rate": 0,
+        "x": 13.536,
+        "text": "[1905"
+      },
+      {
+        "page": 35,
+        "rate": 28,
+        "x": 45.761,
+        "text": "[1905"
+      }
+    ]
+  },
+  "2002": {
+    "length": 4,
+    "rates": [
+      18,
+      12
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 35,
+        "rate": 18,
+        "x": 34.284,
+        "text": "2002"
+      },
+      {
+        "page": 56,
+        "rate": 12,
+        "x": 26.153,
+        "text": "No.5470 : 2002"
+      }
+    ]
+  },
+  "2101": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 37,
+        "rate": 18,
+        "x": 34.284,
+        "text": "2101"
+      },
+      {
+        "page": 37,
+        "rate": 28,
+        "x": 46.571,
+        "text": "[2101]"
+      }
+    ]
+  },
+  "2103": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 38,
+        "rate": 18,
+        "x": 34.284,
+        "text": "2103"
+      },
+      {
+        "page": 38,
+        "rate": 28,
+        "x": 45.131,
+        "text": "[2103]"
+      }
+    ]
+  },
+  "2106": {
+    "length": 4,
+    "rates": [
+      0,
+      5,
+      12,
+      18,
+      28
+    ],
+    "occurrences": 5,
+    "entries": [
+      {
+        "page": 37,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[2106]"
+      },
+      {
+        "page": 37,
+        "rate": 5,
+        "x": 22.591,
+        "text": "[2106"
+      },
+      {
+        "page": 37,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[2106]"
+      },
+      {
+        "page": 38,
+        "rate": 18,
+        "x": 34.284,
+        "text": "2106"
+      },
+      {
+        "page": 38,
+        "rate": 28,
+        "x": 42.829,
+        "text": "2106]"
+      }
+    ]
+  },
+  "2201": {
+    "length": 4,
+    "rates": [
+      0,
+      12,
+      18
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 39,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[2201]"
+      },
+      {
+        "page": 39,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[2201]"
+      },
+      {
+        "page": 39,
+        "rate": 12,
+        "x": 30.737,
+        "text": "[2201"
+      },
+      {
+        "page": 39,
+        "rate": 18,
+        "x": 34.284,
+        "text": "2201"
+      }
+    ]
+  },
+  "2501": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 41,
+        "rate": 0,
+        "x": 14.544,
+        "text": "[2501"
+      },
+      {
+        "page": 41,
+        "rate": 5,
+        "x": 18.091,
+        "text": "2501"
+      }
+    ]
+  },
+  "2516": {
+    "length": 4,
+    "rates": [
+      12,
+      28,
+      5
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 41,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[2516]"
+      },
+      {
+        "page": 41,
+        "rate": 28,
+        "x": 42.581,
+        "text": "blocks [2516]"
+      },
+      {
+        "page": 44,
+        "rate": 5,
+        "x": 18.091,
+        "text": "2516"
+      },
+      {
+        "page": 46,
+        "rate": 5,
+        "x": 18.091,
+        "text": "2516 whether or not"
+      }
+    ]
+  },
+  "2617": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 49,
+        "rate": 0,
+        "x": 16.966,
+        "text": "2617]"
+      },
+      {
+        "page": 51,
+        "rate": 5,
+        "x": 18.091,
+        "text": "2617"
+      }
+    ]
+  },
+  "2710": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 51,
+        "rate": 28,
+        "x": 44.681,
+        "text": "[2710]"
+      },
+      {
+        "page": 52,
+        "rate": 18,
+        "x": 34.284,
+        "text": "2710"
+      }
+    ]
+  },
+  "2847": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 55,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[2847]"
+      },
+      {
+        "page": 62,
+        "rate": 18,
+        "x": 34.284,
+        "text": "2847"
+      }
+    ]
+  },
+  "3002": {
+    "length": 4,
+    "rates": [
+      5,
+      0,
+      12
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 71,
+        "rate": 5,
+        "x": 18.091,
+        "text": "[3002, 3006]"
+      },
+      {
+        "page": 72,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[3002]"
+      },
+      {
+        "page": 72,
+        "rate": 12,
+        "x": 26.153,
+        "text": "3002"
+      }
+    ]
+  },
+  "3006": {
+    "length": 4,
+    "rates": [
+      5,
+      0
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 71,
+        "rate": 5,
+        "x": 18.091,
+        "text": "[3002, 3006]"
+      },
+      {
+        "page": 72,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[3006]"
+      }
+    ]
+  },
+  "3202": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 76,
+        "rate": 5,
+        "x": 18.091,
+        "text": "pretanning [3202]"
+      },
+      {
+        "page": 76,
+        "rate": 18,
+        "x": 34.284,
+        "text": "3202"
+      }
+    ]
+  },
+  "3215": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 76,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[3215]"
+      },
+      {
+        "page": 76,
+        "rate": 12,
+        "x": 26.153,
+        "text": "Ball pen ink [3215]"
+      },
+      {
+        "page": 79,
+        "rate": 18,
+        "x": 34.284,
+        "text": "3215"
+      }
+    ]
+  },
+  "3304": {
+    "length": 4,
+    "rates": [
+      0,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 79,
+        "rate": 0,
+        "x": 11.691,
+        "text": "Alta [3304]"
+      },
+      {
+        "page": 80,
+        "rate": 28,
+        "x": 42.109,
+        "text": "3304"
+      }
+    ]
+  },
+  "3305": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 80,
+        "rate": 28,
+        "x": 42.109,
+        "text": "3305"
+      },
+      {
+        "page": 80,
+        "rate": 28,
+        "x": 47.876,
+        "text": "3305"
+      },
+      {
+        "page": 81,
+        "rate": 18,
+        "x": 34.284,
+        "text": "Hair oil [3305 9011,"
+      }
+    ]
+  },
+  "3306": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 79,
+        "rate": 12,
+        "x": 26.153,
+        "text": "Tooth powder [3306"
+      },
+      {
+        "page": 80,
+        "rate": 28,
+        "x": 42.319,
+        "text": "3306"
+      },
+      {
+        "page": 81,
+        "rate": 28,
+        "x": 46.706,
+        "text": "3306"
+      }
+    ]
+  },
+  "3402": {
+    "length": 4,
+    "rates": [
+      5,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 82,
+        "rate": 5,
+        "x": 18.091,
+        "text": "oil [3402]"
+      },
+      {
+        "page": 82,
+        "rate": 28,
+        "x": 42.581,
+        "text": "3402 Organic surface"
+      }
+    ]
+  },
+  "3404": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 82,
+        "rate": 18,
+        "x": 34.284,
+        "text": "3404"
+      },
+      {
+        "page": 82,
+        "rate": 18,
+        "x": 34.284,
+        "text": "waxes [3404]"
+      },
+      {
+        "page": 83,
+        "rate": 28,
+        "x": 42.581,
+        "text": "3404 Artificial waxes"
+      }
+    ]
+  },
+  "3503": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 86,
+        "rate": 18,
+        "x": 38.531,
+        "text": "[3503]"
+      },
+      {
+        "page": 207,
+        "rate": 28,
+        "x": 45.75,
+        "text": "3503)"
+      }
+    ]
+  },
+  "3701": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 88,
+        "rate": 12,
+        "x": 26.153,
+        "text": "3701"
+      },
+      {
+        "page": 88,
+        "rate": 18,
+        "x": 34.284,
+        "text": "3701"
+      }
+    ]
+  },
+  "3706": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 88,
+        "rate": 12,
+        "x": 30.526,
+        "text": "3706];"
+      },
+      {
+        "page": 89,
+        "rate": 18,
+        "x": 34.284,
+        "text": "3706"
+      }
+    ]
+  },
+  "3818": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 90,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[3818]"
+      },
+      {
+        "page": 94,
+        "rate": 18,
+        "x": 38.576,
+        "text": "[3818];"
+      }
+    ]
+  },
+  "4001": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 98,
+        "rate": 5,
+        "x": 18.091,
+        "text": "strip [4001]"
+      },
+      {
+        "page": 98,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4001"
+      }
+    ]
+  },
+  "4007": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 98,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[4007]"
+      },
+      {
+        "page": 100,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4007"
+      }
+    ]
+  },
+  "4011": {
+    "length": 4,
+    "rates": [
+      28,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 98,
+        "rate": 28,
+        "x": 47.368,
+        "text": "[4011]"
+      },
+      {
+        "page": 99,
+        "rate": 5,
+        "x": 22.418,
+        "text": "[4011,"
+      }
+    ]
+  },
+  "4013": {
+    "length": 4,
+    "rates": [
+      5,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 99,
+        "rate": 5,
+        "x": 18.091,
+        "text": "4013]"
+      },
+      {
+        "page": 99,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[4013] ["
+      }
+    ]
+  },
+  "4014": {
+    "length": 4,
+    "rates": [
+      0,
+      12,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 98,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[4014]"
+      },
+      {
+        "page": 98,
+        "rate": 12,
+        "x": 26.153,
+        "text": "bottles [4014]"
+      },
+      {
+        "page": 101,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4014"
+      }
+    ]
+  },
+  "4015": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 98,
+        "rate": 12,
+        "x": 26.153,
+        "text": "gloves [4015]"
+      },
+      {
+        "page": 101,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4015"
+      }
+    ]
+  },
+  "4016": {
+    "length": 4,
+    "rates": [
+      5,
+      28,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 98,
+        "rate": 5,
+        "x": 18.091,
+        "text": "latex [4016]"
+      },
+      {
+        "page": 99,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[4016]"
+      },
+      {
+        "page": 102,
+        "rate": 18,
+        "x": 34.284,
+        "text": "Erasers [4016]."
+      }
+    ]
+  },
+  "4101": {
+    "length": 4,
+    "rates": [
+      0,
+      5,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 102,
+        "rate": 0,
+        "x": 16.966,
+        "text": "[4101 to 4106]"
+      },
+      {
+        "page": 102,
+        "rate": 5,
+        "x": 18.091,
+        "text": "4101"
+      },
+      {
+        "page": 106,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4101, 4102 or 4103;"
+      }
+    ]
+  },
+  "4102": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 102,
+        "rate": 5,
+        "x": 18.091,
+        "text": "4102"
+      },
+      {
+        "page": 106,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4101, 4102 or 4103;"
+      }
+    ]
+  },
+  "4103": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 103,
+        "rate": 5,
+        "x": 18.091,
+        "text": "4103"
+      },
+      {
+        "page": 106,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4101, 4102 or 4103;"
+      }
+    ]
+  },
+  "4106": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 102,
+        "rate": 0,
+        "x": 16.966,
+        "text": "[4101 to 4106]"
+      },
+      {
+        "page": 104,
+        "rate": 5,
+        "x": 18.091,
+        "text": "4106"
+      }
+    ]
+  },
+  "4203": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 104,
+        "rate": 12,
+        "x": 26.153,
+        "text": "sports [4203]"
+      },
+      {
+        "page": 105,
+        "rate": 28,
+        "x": 42.581,
+        "text": "4203"
+      }
+    ]
+  },
+  "4303": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 106,
+        "rate": 28,
+        "x": 42.581,
+        "text": "4303"
+      },
+      {
+        "page": 107,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4303;"
+      }
+    ]
+  },
+  "4304": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 106,
+        "rate": 28,
+        "x": 42.581,
+        "text": "4304"
+      },
+      {
+        "page": 107,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4304"
+      }
+    ]
+  },
+  "4401": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 107,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[4401]"
+      },
+      {
+        "page": 107,
+        "rate": 5,
+        "x": 18.091,
+        "text": "forms [4401]"
+      }
+    ]
+  },
+  "4501": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 111,
+        "rate": 12,
+        "x": 26.153,
+        "text": "4501"
+      },
+      {
+        "page": 111,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4501"
+      }
+    ]
+  },
+  "4802": {
+    "length": 4,
+    "rates": [
+      12,
+      0
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 114,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[4802,"
+      },
+      {
+        "page": 115,
+        "rate": 0,
+        "x": 14.358,
+        "text": "[4802,"
+      }
+    ]
+  },
+  "4810": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 114,
+        "rate": 12,
+        "x": 26.153,
+        "text": "10, 4807, 4808, 4810,"
+      },
+      {
+        "page": 116,
+        "rate": 18,
+        "x": 36.114,
+        "text": "4810"
+      }
+    ]
+  },
+  "4811": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 114,
+        "rate": 12,
+        "x": 26.153,
+        "text": "paper [4811]"
+      },
+      {
+        "page": 115,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4811"
+      }
+    ]
+  },
+  "4817": {
+    "length": 4,
+    "rates": [
+      12,
+      0,
+      18
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 114,
+        "rate": 12,
+        "x": 26.153,
+        "text": "4817]"
+      },
+      {
+        "page": 115,
+        "rate": 0,
+        "x": 11.691,
+        "text": "4817]"
+      },
+      {
+        "page": 115,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[4817]."
+      },
+      {
+        "page": 117,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4817"
+      }
+    ]
+  },
+  "4820": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 115,
+        "rate": 12,
+        "x": 26.153,
+        "text": "note book [4820]"
+      },
+      {
+        "page": 118,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4820"
+      }
+    ]
+  },
+  "4823": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 115,
+        "rate": 12,
+        "x": 26.153,
+        "text": "Kites [4823]"
+      },
+      {
+        "page": 115,
+        "rate": 12,
+        "x": 26.153,
+        "text": "trays [4823]"
+      },
+      {
+        "page": 115,
+        "rate": 12,
+        "x": 30.725,
+        "text": "[4823"
+      },
+      {
+        "page": 119,
+        "rate": 18,
+        "x": 34.284,
+        "text": "4823"
+      }
+    ]
+  },
+  "6806": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 42,
+        "rate": 5,
+        "x": 22.414,
+        "text": "6806),"
+      },
+      {
+        "page": 127,
+        "rate": 18,
+        "x": 34.284,
+        "text": "6806"
+      }
+    ]
+  },
+  "6903": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 130,
+        "rate": 18,
+        "x": 34.284,
+        "text": "6902, 6903]"
+      },
+      {
+        "page": 130,
+        "rate": 28,
+        "x": 42.581,
+        "text": "6903"
+      }
+    ]
+  },
+  "7015": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 133,
+        "rate": 18,
+        "x": 34.284,
+        "text": "7015"
+      },
+      {
+        "page": 134,
+        "rate": 28,
+        "x": 45.712,
+        "text": "7015),"
+      }
+    ]
+  },
+  "7018": {
+    "length": 4,
+    "rates": [
+      0,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 132,
+        "rate": 0,
+        "x": 11.691,
+        "text": "metals) [7018]"
+      },
+      {
+        "page": 133,
+        "rate": 18,
+        "x": 34.284,
+        "text": "7018)."
+      },
+      {
+        "page": 134,
+        "rate": 18,
+        "x": 34.284,
+        "text": "7018"
+      }
+    ]
+  },
+  "7020": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 132,
+        "rate": 12,
+        "x": 26.153,
+        "text": "and lanterns [7020]"
+      },
+      {
+        "page": 135,
+        "rate": 28,
+        "x": 42.581,
+        "text": "7020"
+      }
+    ]
+  },
+  "7310": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 141,
+        "rate": 12,
+        "x": 26.153,
+        "text": "sharpeners [7310 or"
+      },
+      {
+        "page": 145,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[7310]"
+      }
+    ]
+  },
+  "7317": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 141,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[7317]"
+      },
+      {
+        "page": 146,
+        "rate": 18,
+        "x": 34.284,
+        "text": "7317"
+      }
+    ]
+  },
+  "7319": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 141,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[7319]"
+      },
+      {
+        "page": 147,
+        "rate": 18,
+        "x": 34.284,
+        "text": "7319"
+      }
+    ]
+  },
+  "7321": {
+    "length": 4,
+    "rates": [
+      12,
+      28,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 141,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[7321]"
+      },
+      {
+        "page": 141,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[7321]"
+      },
+      {
+        "page": 147,
+        "rate": 18,
+        "x": 34.284,
+        "text": "LPG stoves [7321]"
+      }
+    ]
+  },
+  "7323": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 141,
+        "rate": 12,
+        "x": 26.153,
+        "text": "Utensils [7323]"
+      },
+      {
+        "page": 141,
+        "rate": 12,
+        "x": 26.153,
+        "text": "steel [7323]"
+      },
+      {
+        "page": 147,
+        "rate": 18,
+        "x": 34.284,
+        "text": "7323"
+      }
+    ]
+  },
+  "7326": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 141,
+        "rate": 12,
+        "x": 26.153,
+        "text": "7326]"
+      },
+      {
+        "page": 149,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[7326]"
+      }
+    ]
+  },
+  "7418": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 149,
+        "rate": 12,
+        "x": 26.153,
+        "text": "Utensils [7418]"
+      },
+      {
+        "page": 149,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[7418]"
+      },
+      {
+        "page": 149,
+        "rate": 28,
+        "x": 42.581,
+        "text": "of copper [7418]"
+      }
+    ]
+  },
+  "7610": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 153,
+        "rate": 18,
+        "x": 34.284,
+        "text": "7610"
+      },
+      {
+        "page": 153,
+        "rate": 28,
+        "x": 44.983,
+        "text": "7610"
+      },
+      {
+        "page": 153,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[7610]"
+      }
+    ]
+  },
+  "7615": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 152,
+        "rate": 12,
+        "x": 26.153,
+        "text": "Utensils [7615]"
+      },
+      {
+        "page": 152,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[7615]"
+      },
+      {
+        "page": 153,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[7615]"
+      }
+    ]
+  },
+  "8214": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 158,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[8214]"
+      },
+      {
+        "page": 159,
+        "rate": 28,
+        "x": 42.581,
+        "text": "thereof [8214]."
+      }
+    ]
+  },
+  "8305": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 146,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8305"
+      },
+      {
+        "page": 162,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8305"
+      }
+    ]
+  },
+  "8401": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 164,
+        "rate": 12,
+        "x": 29.004,
+        "text": "[8401]"
+      },
+      {
+        "page": 164,
+        "rate": 18,
+        "x": 34.284,
+        "text": "separation [8401]"
+      }
+    ]
+  },
+  "8413": {
+    "length": 4,
+    "rates": [
+      5,
+      12,
+      28
+    ],
+    "occurrences": 6,
+    "entries": [
+      {
+        "page": 164,
+        "rate": 5,
+        "x": 18.091,
+        "text": "parts thereof [8413,"
+      },
+      {
+        "page": 164,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[8413]"
+      },
+      {
+        "page": 164,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8413"
+      },
+      {
+        "page": 165,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8413"
+      },
+      {
+        "page": 165,
+        "rate": 28,
+        "x": 45.706,
+        "text": "8413"
+      },
+      {
+        "page": 165,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[8413]"
+      }
+    ]
+  },
+  "8414": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 164,
+        "rate": 12,
+        "x": 27.532,
+        "text": "8414"
+      },
+      {
+        "page": 165,
+        "rate": 28,
+        "x": 42.581,
+        "text": "with filters [8414]"
+      }
+    ]
+  },
+  "8419": {
+    "length": 4,
+    "rates": [
+      5,
+      28
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 164,
+        "rate": 5,
+        "x": 22.606,
+        "text": "[8419"
+      },
+      {
+        "page": 166,
+        "rate": 28,
+        "x": 45.521,
+        "text": "8419"
+      },
+      {
+        "page": 166,
+        "rate": 28,
+        "x": 42.581,
+        "text": "storage tanks] , 8419"
+      },
+      {
+        "page": 167,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[8419]"
+      }
+    ]
+  },
+  "8430": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 167,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8430"
+      },
+      {
+        "page": 169,
+        "rate": 28,
+        "x": 42.581,
+        "text": "blowers [8430]"
+      }
+    ]
+  },
+  "8443": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 169,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8443"
+      },
+      {
+        "page": 169,
+        "rate": 28,
+        "x": 42.581,
+        "text": "cartridges [8443]"
+      },
+      {
+        "page": 177,
+        "rate": 18,
+        "x": 39.095,
+        "text": "8443,"
+      }
+    ]
+  },
+  "8472": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 170,
+        "rate": 28,
+        "x": 45.221,
+        "text": "[8472]"
+      },
+      {
+        "page": 173,
+        "rate": 18,
+        "x": 34.284,
+        "text": "electric [8472]"
+      }
+    ]
+  },
+  "8479": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 165,
+        "rate": 12,
+        "x": 26.153,
+        "text": "Machines [8479]"
+      },
+      {
+        "page": 173,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8479"
+      },
+      {
+        "page": 173,
+        "rate": 18,
+        "x": 34.284,
+        "text": "(8479"
+      }
+    ]
+  },
+  "8517": {
+    "length": 4,
+    "rates": [
+      12,
+      18,
+      28
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 175,
+        "rate": 12,
+        "x": 29.147,
+        "text": "[8517]"
+      },
+      {
+        "page": 177,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8517"
+      },
+      {
+        "page": 178,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[8517]"
+      },
+      {
+        "page": 182,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8517 [8537]"
+      }
+    ]
+  },
+  "8518": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 177,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8518"
+      },
+      {
+        "page": 178,
+        "rate": 28,
+        "x": 46.309,
+        "text": "[8518"
+      },
+      {
+        "page": 178,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[8518"
+      }
+    ]
+  },
+  "8525": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 177,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8525, 8527 or 8528"
+      },
+      {
+        "page": 179,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[8525]"
+      }
+    ]
+  },
+  "8527": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 177,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8525, 8527 or 8528"
+      },
+      {
+        "page": 179,
+        "rate": 28,
+        "x": 42.581,
+        "text": "or a clock [8527]"
+      }
+    ]
+  },
+  "8528": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 177,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8525, 8527 or 8528"
+      },
+      {
+        "page": 180,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[8528]"
+      }
+    ]
+  },
+  "8535": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 178,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[8535]"
+      },
+      {
+        "page": 179,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8535, 8536 or 8537."
+      },
+      {
+        "page": 181,
+        "rate": 28,
+        "x": 46.687,
+        "text": "8535"
+      }
+    ]
+  },
+  "8536": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 179,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8535, 8536 or 8537."
+      },
+      {
+        "page": 181,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[8536]"
+      },
+      {
+        "page": 181,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8536,"
+      }
+    ]
+  },
+  "8537": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 179,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8535, 8536 or 8537."
+      },
+      {
+        "page": 182,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8517 [8537]"
+      }
+    ]
+  },
+  "8543": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 180,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8543"
+      },
+      {
+        "page": 182,
+        "rate": 28,
+        "x": 42.581,
+        "text": "this chapter [8543]"
+      }
+    ]
+  },
+  "8546": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 180,
+        "rate": 18,
+        "x": 34.284,
+        "text": "8546"
+      },
+      {
+        "page": 183,
+        "rate": 28,
+        "x": 47.662,
+        "text": "8546;"
+      }
+    ]
+  },
+  "8701": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 186,
+        "rate": 12,
+        "x": 26.153,
+        "text": "1800 cc) [8701]"
+      },
+      {
+        "page": 188,
+        "rate": 28,
+        "x": 46.264,
+        "text": "8701"
+      },
+      {
+        "page": 188,
+        "rate": 28,
+        "x": 46.267,
+        "text": "8701"
+      },
+      {
+        "page": 188,
+        "rate": 28,
+        "x": 46.267,
+        "text": "8701"
+      }
+    ]
+  },
+  "8703": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 186,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[8703]"
+      },
+      {
+        "page": 186,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8703"
+      }
+    ]
+  },
+  "8704": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 186,
+        "rate": 18,
+        "x": 34.284,
+        "text": "vehicles [8704]"
+      },
+      {
+        "page": 187,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8704"
+      }
+    ]
+  },
+  "8713": {
+    "length": 4,
+    "rates": [
+      5,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 186,
+        "rate": 5,
+        "x": 18.091,
+        "text": "8713"
+      },
+      {
+        "page": 189,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8713."
+      }
+    ]
+  },
+  "8714": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 187,
+        "rate": 12,
+        "x": 26.153,
+        "text": "8712 [8714]"
+      },
+      {
+        "page": 189,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8714"
+      }
+    ]
+  },
+  "8802": {
+    "length": 4,
+    "rates": [
+      5,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 190,
+        "rate": 5,
+        "x": 18.091,
+        "text": "8802"
+      },
+      {
+        "page": 190,
+        "rate": 5,
+        "x": 18.091,
+        "text": "8802"
+      },
+      {
+        "page": 190,
+        "rate": 28,
+        "x": 42.581,
+        "text": "8802"
+      }
+    ]
+  },
+  "8803": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 190,
+        "rate": 0,
+        "x": 11.691,
+        "text": "8803"
+      },
+      {
+        "page": 190,
+        "rate": 5,
+        "x": 18.091,
+        "text": "8803"
+      }
+    ]
+  },
+  "9001": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 192,
+        "rate": 12,
+        "x": 26.153,
+        "text": "contact lens [9001]"
+      },
+      {
+        "page": 192,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[9001]"
+      }
+    ]
+  },
+  "9004": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 192,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[9004] Goggles (other"
+      },
+      {
+        "page": 193,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[9004]"
+      }
+    ]
+  },
+  "9011": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 80,
+        "rate": 28,
+        "x": 42.109,
+        "text": "9011, 3305 90 19]"
+      },
+      {
+        "page": 81,
+        "rate": 18,
+        "x": 34.284,
+        "text": "Hair oil [3305 9011,"
+      },
+      {
+        "page": 194,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[9011]"
+      }
+    ]
+  },
+  "9014": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 194,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[9014]"
+      },
+      {
+        "page": 195,
+        "rate": 18,
+        "x": 34.284,
+        "text": "9014, 9015, 9028 or"
+      },
+      {
+        "page": 196,
+        "rate": 18,
+        "x": 37.656,
+        "text": "9014"
+      }
+    ]
+  },
+  "9015": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 195,
+        "rate": 18,
+        "x": 34.284,
+        "text": "9014, 9015, 9028 or"
+      },
+      {
+        "page": 195,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[9015]"
+      },
+      {
+        "page": 196,
+        "rate": 18,
+        "x": 34.284,
+        "text": "9015; stroboscopes."
+      }
+    ]
+  },
+  "9017": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 192,
+        "rate": 12,
+        "x": 26.153,
+        "text": "pantographs [9017]."
+      },
+      {
+        "page": 193,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9017]."
+      },
+      {
+        "page": 195,
+        "rate": 28,
+        "x": 42.581,
+        "text": "[9017] Instruments for"
+      }
+    ]
+  },
+  "9021": {
+    "length": 4,
+    "rates": [
+      0,
+      12
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 192,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[9021]."
+      },
+      {
+        "page": 194,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9021]."
+      }
+    ]
+  },
+  "9022": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 195,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9022]."
+      },
+      {
+        "page": 196,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9022 Apparatus based"
+      }
+    ]
+  },
+  "9101": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 197,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9101, 9102]"
+      },
+      {
+        "page": 197,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9101"
+      },
+      {
+        "page": 198,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9101"
+      }
+    ]
+  },
+  "9102": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 197,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9101, 9102]"
+      },
+      {
+        "page": 198,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9102"
+      }
+    ]
+  },
+  "9114": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 198,
+        "rate": 18,
+        "x": 34.284,
+        "text": "9114"
+      },
+      {
+        "page": 200,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9114"
+      }
+    ]
+  },
+  "9304": {
+    "length": 4,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 202,
+        "rate": 28,
+        "x": 42.581,
+        "text": "or 9304."
+      },
+      {
+        "page": 203,
+        "rate": 18,
+        "x": 34.284,
+        "text": "9304"
+      },
+      {
+        "page": 203,
+        "rate": 18,
+        "x": 34.284,
+        "text": "9304."
+      }
+    ]
+  },
+  "9402": {
+    "length": 4,
+    "rates": [
+      18,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 204,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[9402]."
+      },
+      {
+        "page": 204,
+        "rate": 28,
+        "x": 47.437,
+        "text": "9402),"
+      }
+    ]
+  },
+  "9404": {
+    "length": 4,
+    "rates": [
+      12,
+      18,
+      28
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 204,
+        "rate": 12,
+        "x": 26.153,
+        "text": "mattresses] [9404]."
+      },
+      {
+        "page": 204,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9404]."
+      },
+      {
+        "page": 204,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[9404]."
+      },
+      {
+        "page": 204,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9404"
+      }
+    ]
+  },
+  "9405": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 204,
+        "rate": 12,
+        "x": 26.153,
+        "text": "LED lamps [9405]."
+      },
+      {
+        "page": 204,
+        "rate": 12,
+        "x": 26.153,
+        "text": "Board) [9405]."
+      },
+      {
+        "page": 205,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9405"
+      }
+    ]
+  },
+  "9503": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 205,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9503]."
+      },
+      {
+        "page": 205,
+        "rate": 18,
+        "x": 34.284,
+        "text": "[9503]."
+      }
+    ]
+  },
+  "9506": {
+    "length": 4,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 205,
+        "rate": 12,
+        "x": 26.153,
+        "text": "exercise [9506]"
+      },
+      {
+        "page": 206,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9506"
+      }
+    ]
+  },
+  "9603": {
+    "length": 4,
+    "rates": [
+      5,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 206,
+        "rate": 5,
+        "x": 18.091,
+        "text": "bahari jhadoo (9603"
+      },
+      {
+        "page": 207,
+        "rate": 18,
+        "x": 34.284,
+        "text": "9603"
+      }
+    ]
+  },
+  "9608": {
+    "length": 4,
+    "rates": [
+      12,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 206,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9608]."
+      },
+      {
+        "page": 208,
+        "rate": 18,
+        "x": 34.284,
+        "text": "9608"
+      }
+    ]
+  },
+  "9609": {
+    "length": 4,
+    "rates": [
+      0,
+      12
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 206,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[9609]"
+      },
+      {
+        "page": 207,
+        "rate": 12,
+        "x": 26.153,
+        "text": "tailor’s chalk [9609]."
+      }
+    ]
+  },
+  "9804": {
+    "length": 4,
+    "rates": [
+      5,
+      12,
+      28
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 211,
+        "rate": 5,
+        "x": 18.091,
+        "text": "9804"
+      },
+      {
+        "page": 211,
+        "rate": 12,
+        "x": 26.153,
+        "text": "9804"
+      },
+      {
+        "page": 211,
+        "rate": 28,
+        "x": 42.581,
+        "text": "9804"
+      }
+    ]
+  },
+  "210690": {
+    "length": 6,
+    "rates": [
+      12,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 38,
+        "rate": 12,
+        "x": 26.153,
+        "text": "2106 90 Namkeens,"
+      },
+      {
+        "page": 38,
+        "rate": 28,
+        "x": 46.601,
+        "text": "[2106 90"
+      }
+    ]
+  },
+  "33059019": {
+    "length": 8,
+    "rates": [
+      28,
+      18
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 80,
+        "rate": 28,
+        "x": 42.109,
+        "text": "9011, 3305 90 19]"
+      },
+      {
+        "page": 81,
+        "rate": 18,
+        "x": 34.284,
+        "text": "3305 90 19]"
+      }
+    ]
+  },
+  "94055031": {
+    "length": 8,
+    "rates": [
+      5,
+      12
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 204,
+        "rate": 5,
+        "x": 18.091,
+        "text": "lantern [9405 50 31]"
+      },
+      {
+        "page": 204,
+        "rate": 12,
+        "x": 26.153,
+        "text": "[9405, 9405 50 31]."
+      }
+    ]
+  },
+  "0105": {
+    "length": 4,
+    "rates": [],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 1,
+        "rate": null,
+        "x": 10.566,
+        "text": "0105"
+      },
+      {
+        "page": 3,
+        "rate": null,
+        "x": 10.566,
+        "text": "0105,"
+      }
+    ]
+  },
+  "0304": {
+    "length": 4,
+    "rates": [
+      5,
+      0
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 3,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0304"
+      },
+      {
+        "page": 3,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0304"
+      },
+      {
+        "page": 4,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0304"
+      },
+      {
+        "page": 4,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0304"
+      }
+    ]
+  },
+  "0306": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 4,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0306"
+      },
+      {
+        "page": 4,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0306"
+      }
+    ]
+  },
+  "0307": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 4,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0307 Molluscs,"
+      },
+      {
+        "page": 4,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0307"
+      }
+    ]
+  },
+  "0308": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 5,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0308"
+      },
+      {
+        "page": 5,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0308"
+      }
+    ]
+  },
+  "0401": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 6,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[0401]"
+      },
+      {
+        "page": 6,
+        "rate": 5,
+        "x": 18.091,
+        "text": "milk [0401]"
+      }
+    ]
+  },
+  "0403": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 6,
+        "rate": 0,
+        "x": 14.354,
+        "text": "[0403,"
+      },
+      {
+        "page": 6,
+        "rate": 0,
+        "x": 13.454,
+        "text": "[0403]"
+      },
+      {
+        "page": 6,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[0403]"
+      },
+      {
+        "page": 6,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0403"
+      }
+    ]
+  },
+  "0406": {
+    "length": 4,
+    "rates": [
+      0,
+      12,
+      5
+    ],
+    "occurrences": 4,
+    "entries": [
+      {
+        "page": 6,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0406]"
+      },
+      {
+        "page": 6,
+        "rate": 0,
+        "x": 14.099,
+        "text": "[0406]"
+      },
+      {
+        "page": 6,
+        "rate": 12,
+        "x": 28.584,
+        "text": "[0406]"
+      },
+      {
+        "page": 7,
+        "rate": 5,
+        "x": 19.898,
+        "text": "[0406]."
+      }
+    ]
+  },
+  "0409": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 7,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0409"
+      },
+      {
+        "page": 8,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0409"
+      }
+    ]
+  },
+  "0404": {
+    "length": 4,
+    "rates": [
+      5,
+      28
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 7,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0404"
+      },
+      {
+        "page": 34,
+        "rate": 28,
+        "x": 44.943,
+        "text": "0404,"
+      }
+    ]
+  },
+  "0511": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 8,
+        "rate": 0,
+        "x": 11.691,
+        "text": "[0511]"
+      },
+      {
+        "page": 11,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0511"
+      }
+    ]
+  },
+  "0714": {
+    "length": 4,
+    "rates": [
+      5,
+      0
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 12,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0714"
+      },
+      {
+        "page": 14,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0714"
+      },
+      {
+        "page": 23,
+        "rate": 0,
+        "x": 14.793,
+        "text": "0714"
+      }
+    ]
+  },
+  "0713": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 14,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0713"
+      },
+      {
+        "page": 23,
+        "rate": 0,
+        "x": 14.796,
+        "text": "0713"
+      },
+      {
+        "page": 23,
+        "rate": 5,
+        "x": 22.849,
+        "text": "0713"
+      }
+    ]
+  },
+  "0801": {
+    "length": 4,
+    "rates": [
+      0,
+      12
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 15,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0801"
+      },
+      {
+        "page": 15,
+        "rate": 12,
+        "x": 26.153,
+        "text": "0801"
+      }
+    ]
+  },
+  "0802": {
+    "length": 4,
+    "rates": [
+      0,
+      5,
+      12
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 15,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0802"
+      },
+      {
+        "page": 15,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0802"
+      },
+      {
+        "page": 15,
+        "rate": 12,
+        "x": 26.153,
+        "text": "0802"
+      }
+    ]
+  },
+  "0804": {
+    "length": 4,
+    "rates": [
+      0,
+      12
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 16,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0804"
+      },
+      {
+        "page": 16,
+        "rate": 12,
+        "x": 26.153,
+        "text": "0804"
+      }
+    ]
+  },
+  "0814": {
+    "length": 4,
+    "rates": [
+      5,
+      0
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 16,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0814"
+      },
+      {
+        "page": 18,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0814"
+      }
+    ]
+  },
+  "0806": {
+    "length": 4,
+    "rates": [
+      12,
+      0
+    ],
+    "occurrences": 3,
+    "entries": [
+      {
+        "page": 16,
+        "rate": 12,
+        "x": 26.153,
+        "text": "0806"
+      },
+      {
+        "page": 16,
+        "rate": 12,
+        "x": 26.153,
+        "text": "0806;"
+      },
+      {
+        "page": 17,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0806"
+      }
+    ]
+  },
+  "0901": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 19,
+        "rate": 0,
+        "x": 11.691,
+        "text": "0901"
+      },
+      {
+        "page": 19,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0901"
+      }
+    ]
+  },
+  "0902": {
+    "length": 4,
+    "rates": [
+      0,
+      5
+    ],
+    "occurrences": 2,
+    "entries": [
+      {
+        "page": 19,
+        "rate": 0,
+        "x": 12.749,
+        "text": "[0902]"
+      },
+      {
+        "page": 19,
+        "rate": 5,
+        "x": 18.091,
+        "text": "0902"
+      }
+    ]
+  }
+}
