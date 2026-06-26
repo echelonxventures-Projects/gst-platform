@@ -2,83 +2,111 @@ services:
   db:
     image: postgres:17
     container_name: gst-postgres
-    restart: unless-stopped
+    restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: gst_platform
-    ports:
-      - "5432:5432"
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME:-gst_platform}
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/bootstrap.sql:/docker-entrypoint-initdb.d/01-bootstrap.sql
       - ./database/schema.sql:/docker-entrypoint-initdb.d/02-schema.sql
       - ./database/seed.sql:/docker-entrypoint-initdb.d/03-seed.sql
+      - ./backups:/backups
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - gst-network
 
   api:
     build:
       context: .
       dockerfile: infrastructure/docker/Dockerfile.api
     container_name: gst-api
-    ports:
-      - "3000:3000"
+    restart: always
     environment:
       DB_HOST: db
       DB_PORT: 5432
-      DB_NAME: gst_platform
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_NAME: ${DB_NAME:-gst_platform}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD}
       API_PORT: 3000
       API_HOST: 0.0.0.0
+      NODE_ENV: production
     depends_on:
       db:
         condition: service_healthy
-    restart: unless-stopped
+    networks:
+      - gst-network
 
   worker:
     build:
       context: .
       dockerfile: infrastructure/docker/Dockerfile.worker
     container_name: gst-worker
+    restart: always
     environment:
       DB_HOST: db
       DB_PORT: 5432
-      DB_NAME: gst_platform
-      DB_USER: postgres
-      DB_PASSWORD: postgres
-      POLL_INTERVAL: 60000
+      DB_NAME: ${DB_NAME:-gst_platform}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD}
+      POLL_INTERVAL: ${POLL_INTERVAL:-300000}
       STORAGE_PATH: /app/storage/documents
+      NODE_ENV: production
     volumes:
       - worker_storage:/app/storage
     depends_on:
       db:
         condition: service_healthy
-    restart: unless-stopped
+    networks:
+      - gst-network
 
   admin:
     build:
       context: .
       dockerfile: infrastructure/docker/Dockerfile.admin
     container_name: gst-admin
-    ports:
-      - "3001:3001"
+    restart: always
     environment:
       DB_HOST: db
       DB_PORT: 5432
-      DB_NAME: gst_platform
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_NAME: ${DB_NAME:-gst_platform}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD}
       ADMIN_PORT: 3001
+      NODE_ENV: production
     depends_on:
       db:
         condition: service_healthy
-    restart: unless-stopped
+    networks:
+      - gst-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: gst-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./infrastructure/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./infrastructure/nginx/ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - api
+      - admin
+    networks:
+      - gst-network
 
 volumes:
   postgres_data:
   worker_storage:
+  nginx_logs:
+
+networks:
+  gst-network:
+    driver: bridge

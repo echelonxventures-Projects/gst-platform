@@ -1,0 +1,11 @@
+{
+  "name": "@gst-platform/core",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./db": "./src/db.js",
+    "./events": "./src/events.js",
+    "./validators": "./src/validators.js",
+    "./config": "./src/config.js"
+  }
+}

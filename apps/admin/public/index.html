@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GST Platform Admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+    h1 { color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #f8f8f8; font-weight: 600; }
+    button { padding: 8px 16px; margin: 4px; border: none; border-radius: 4px; cursor: pointer; background: #007bff; color: white; }
+    button:hover { background: #0056b3; }
+    button.danger { background: #dc3545; }
+    button.danger:hover { background: #c82333; }
+    button.success { background: #28a745; }
+    button.success:hover { background: #218838; }
+    .status { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
+    .status.enabled { background: #d4edda; color: #155724; }
+    .status.disabled { background: #f8d7da; color: #721c24; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GST Platform Admin</h1>
+
+    <div class="section">
+      <h2>Workflow Control</h2>
+      <button class="success" onclick="runWorkflow()">Run Full Workflow</button>
+      <p id="workflow-status"></p>
+    </div>
+
+    <div class="section">
+      <h2>Modules</h2>
+      <table id="modules-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Sources</h2>
+      <table id="sources-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Providers</h2>
+      <table id="providers-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    async function loadModules() {
+      const res = await fetch('/api/modules');
+      const modules = await res.json();
+      const tbody = document.querySelector('#modules-table tbody');
+      tbody.innerHTML = modules.map(m => `
+        <tr>
+          <td>${m.code}</td>
+          <td>${m.name}</td>
+          <td><span class="status ${m.enabled ? 'enabled' : 'disabled'}">${m.enabled ? 'Enabled' : 'Disabled'}</span></td>
+          <td>
+            ${m.enabled 
+              ? `<button class="danger" onclick="toggleModule('${m.code}', false)">Disable</button>`
+              : `<button class="success" onclick="toggleModule('${m.code}', true)">Enable</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function loadSources() {
+      const res = await fetch('/api/sources');
+      const sources = await res.json();
+      const tbody = document.querySelector('#sources-table tbody');
+      tbody.innerHTML = sources.map(s => `
+        <tr>
+          <td>${s.code}</td>
+          <td>${s.name}</td>
+          <td>${s.type}</td>
+          <td>${s.priority}</td>
+          <td><span class="status ${s.enabled ? 'enabled' : 'disabled'}">${s.enabled ? 'Enabled' : 'Disabled'}</span></td>
+          <td>
+            ${s.enabled 
+              ? `<button class="danger" onclick="toggleSource('${s.code}', false)">Disable</button>`
+              : `<button class="success" onclick="toggleSource('${s.code}', true)">Enable</button>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function loadProviders() {
+      const res = await fetch('/api/providers');
+      const providers = await res.json();
+      const tbody = document.querySelector('#providers-table tbody');
+      tbody.innerHTML = providers.map(p => `
+        <tr>
+          <td>${p.code}</td>
+          <td>${p.name}</td>
+          <td>${p.type}</td>
+          <td><span class="status ${p.enabled ? 'enabled' : 'disabled'}">${p.enabled ? 'Enabled' : 'Disabled'}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    async function toggleModule(code, enable) {
+      const action = enable ? 'enable' : 'disable';
+      await fetch(`/api/modules/${code}/${action}`, { method: 'POST' });
+      loadModules();
+    }
+
+    async function toggleSource(code, enable) {
+      const action = enable ? 'enable' : 'disable';
+      await fetch(`/api/sources/${code}/${action}`, { method: 'POST' });
+      loadSources();
+    }
+
+    async function runWorkflow() {
+      const status = document.getElementById('workflow-status');
+      status.textContent = 'Running workflow...';
+      try {
+        const res = await fetch('/api/workflow/run', { method: 'POST' });
+        const result = await res.json();
+        status.textContent = `Workflow completed: ${JSON.stringify(result.results)}`;
+      } catch (error) {
+        status.textContent = `Error: ${error.message}`;
+      }
+    }
+
+    loadModules();
+    loadSources();
+    loadProviders();
+  </script>
+</body>
+</html>

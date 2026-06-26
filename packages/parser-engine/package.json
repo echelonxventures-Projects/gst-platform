@@ -1,0 +1,8 @@
+{
+  "name": "@gst-platform/parser-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/parser.js"
+  }
+}

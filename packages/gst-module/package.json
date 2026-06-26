@@ -1,0 +1,10 @@
+{
+  "name": "@gst-platform/gst-module",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./hsn": "./src/hsn-service.js",
+    "./notifications": "./src/notification-service.js",
+    "./states": "./src/state-service.js"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@gst-platform/source-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/engine.js",
+    "./fetcher": "./src/fetcher.js"
+  }
+}

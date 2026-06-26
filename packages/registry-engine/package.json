@@ -1,0 +1,10 @@
+{
+  "name": "@gst-platform/registry-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./modules": "./src/modules.js",
+    "./sources": "./src/sources.js",
+    "./providers": "./src/providers.js"
+  }
+}

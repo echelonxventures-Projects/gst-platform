@@ -1,0 +1,15 @@
+FROM node:20-slim
+
+WORKDIR /app
+
+# Copy everything
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+RUN mkdir -p /app/storage/documents
+
+WORKDIR /app/apps/worker
+
+CMD ["npm", "start"]

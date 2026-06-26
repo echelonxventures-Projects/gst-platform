@@ -1,67 +1,87 @@
+const Y_TOLERANCE = 0.25;
+
 export function buildRows(column) {
 
-  const buckets = {};
+  const rows = [];
 
-  for (const item of column.items) {
+  const items = column.items
+    .filter(item =>
+      item.y >= 6 &&
+      item.y <= 32
+    )
+    .sort((a, b) => {
 
-    if (
-      item.y < 6 ||
-      item.y > 32
-    ) {
-      continue;
+      const dy = a.y - b.y;
+
+      if (Math.abs(dy) > Y_TOLERANCE) {
+        return dy;
+      }
+
+      return a.x - b.x;
+
+    });
+
+  for (const item of items) {
+
+    let row =
+      rows.find(r =>
+        Math.abs(r.y - item.y) <=
+        Y_TOLERANCE
+      );
+
+    if (!row) {
+
+      row = {
+        y: item.y,
+        tokens: []
+      };
+
+      rows.push(row);
+
     }
 
-    const y =
-      Math.round(item.y * 10) / 10;
-
-    if (!buckets[y]) {
-      buckets[y] = [];
-    }
-
-    buckets[y].push(item);
+    row.tokens.push(item);
 
   }
 
-  return Object
-    .entries(buckets)
-    .sort(
-      (a, b) =>
-        Number(a[0]) -
-        Number(b[0])
-    )
-    .map(
-      ([y, items]) => ({
+  rows.sort(
+    (a, b) =>
+      a.y - b.y
+  );
 
-        y: Number(y),
+  return rows
+    .map(row => {
 
-        tokens: items
-          .sort(
-            (a, b) =>
-              a.x - b.x
-          ),
+      row.tokens.sort(
+        (a, b) =>
+          a.x - b.x
+      );
 
-        text:
-          items
-            .sort(
-              (a, b) =>
-                a.x - b.x
-            )
-            .map(
-              item =>
-                item.text.trim()
-            )
-            .join(' ')
-            .replace(
-              /\s+/g,
-              ' '
-            )
-            .trim()
+      const text =
+        row.tokens
+          .map(token =>
+            token.text.trim()
+          )
+          .filter(Boolean)
+          .join(' ')
+          .replace(/\s+/g, ' ')
+          .replace(/\s+([,.;:)\]])/g, '$1')
+          .replace(/([([])\s+/g, '$1')
+          .trim();
 
-      })
-    )
-    .filter(
-      row =>
-        row.text.length
+      return {
+
+        y: row.y,
+
+        tokens: row.tokens,
+
+        text
+
+      };
+
+    })
+    .filter(row =>
+      row.text.length > 0
     );
 
 }

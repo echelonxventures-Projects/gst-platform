@@ -27,7 +27,7 @@ export const COLUMNS = [
     index: 4,
     rate: 28,
     minX: 41,
-    maxX: 50
+    maxX: Number.POSITIVE_INFINITY
   }
 ];
 
@@ -37,7 +37,7 @@ export function detectColumns(page) {
 
     const items = page.filter(item =>
       item.x >= column.minX &&
-      item.x <= column.maxX
+      item.x < column.maxX
     );
 
     return {
