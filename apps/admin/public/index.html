@@ -5,164 +5,735 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-    h1 { color: #333; }
-    .container { max-width: 1200px; margin: 0 auto; }
-    .section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-    th { background: #f8f8f8; font-weight: 600; }
-    button { padding: 8px 16px; margin: 4px; border: none; border-radius: 4px; cursor: pointer; background: #007bff; color: white; }
-    button:hover { background: #0056b3; }
-    button.danger { background: #dc3545; }
-    button.danger:hover { background: #c82333; }
-    button.success { background: #28a745; }
-    button.success:hover { background: #218838; }
-    .status { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
-    .status.enabled { background: #d4edda; color: #155724; }
-    .status.disabled { background: #f8d7da; color: #721c24; }
+    body{font-family:system-ui,sans-serif;margin:0;padding:0;background:#f5f5f5}
+    .layout{display:flex;min-height:100vh}
+    .sidebar{width:220px;background:#1a1a2e;color:#fff;padding:20px 0;position:fixed;height:100vh;overflow-y:auto}
+    .sidebar h2{padding:0 20px;margin:0 0 20px;font-size:15px;color:#a0a0ff}
+    .sidebar a{display:block;padding:10px 20px;color:#ccc;text-decoration:none;font-size:13px}
+    .sidebar a:hover,.sidebar a.active{background:#16213e;color:#fff}
+    .main{margin-left:220px;padding:30px;flex:1}
+    h1{color:#333;margin:0 0 20px;font-size:22px}
+    .section{background:#fff;padding:20px;margin:0 0 20px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1);display:none}
+    .section.active{display:block}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:9px 12px;text-align:left;border-bottom:1px solid #eee;font-size:13px}
+    th{background:#f8f8f8;font-weight:600}
+    button{padding:6px 14px;margin:2px;border:none;border-radius:4px;cursor:pointer;background:#007bff;color:#fff;font-size:13px}
+    button:hover{background:#0056b3}
+    button.danger{background:#dc3545}button.danger:hover{background:#c82333}
+    button.success{background:#28a745}button.success:hover{background:#218838}
+    .status{display:inline-block;padding:3px 8px;border-radius:4px;font-size:11px}
+    .status.enabled,.status.active{background:#d4edda;color:#155724}
+    .status.disabled,.status.suspended,.status.revoked{background:#f8d7da;color:#721c24}
+
+    .form-group{margin-bottom:12px}
+    .form-group label{display:block;margin-bottom:4px;font-weight:500;font-size:13px}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;font-size:13px;box-sizing:border-box}
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center}
+    .modal.show{display:flex}
+    .modal-content{background:#fff;padding:24px;border-radius:8px;width:450px;max-width:90%;max-height:80vh;overflow-y:auto}
+    .modal-content h3{margin:0 0 16px}
+    .api-key-display{background:#f0f0f0;padding:12px;border-radius:4px;font-family:monospace;word-break:break-all;margin:10px 0;font-size:12px}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px}
+    .stat-card{background:#f8f9fa;padding:14px;border-radius:8px;text-align:center}
+    .stat-card .value{font-size:24px;font-weight:bold;color:#007bff}
+    .stat-card .label{font-size:11px;color:#666;margin-top:4px}
+    .service-card{border:1px solid #e0e0e0;border-radius:8px;padding:14px;margin-bottom:10px}
+    .service-card h4{margin:0 0 6px;color:#333}
+    .service-card p{margin:0;font-size:12px;color:#666}
+    .service-card code{background:#e9ecef;padding:2px 6px;border-radius:3px;font-size:11px}
+    .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;background:#e9ecef;margin:2px}
+    .badge.blue{background:#d0e7ff;color:#0056b3}
+    .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+    .checkbox-grid label{font-weight:normal;font-size:12px;display:flex;align-items:center;gap:4px}
+    pre{background:#1a1a2e;color:#a0ffa0;padding:14px;border-radius:6px;overflow-x:auto;font-size:12px}
+    .plan-card{border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center}
+    .plan-card h4{margin:0 0 4px}.plan-card .price{font-size:22px;font-weight:bold;color:#007bff}
+    .plan-card .period{font-size:11px;color:#888}
+    .plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:20px}
+    .tab-bar{display:flex;gap:0;margin-bottom:16px;border-bottom:2px solid #eee}
+    .tab-bar button{background:none;color:#666;border-radius:0;border-bottom:2px solid transparent;margin-bottom:-2px}
+    .tab-bar button.active{color:#007bff;border-bottom-color:#007bff}
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>GST Platform Admin</h1>
+<!-- LOGIN SCREEN -->
+<div id="login-screen" style="display:flex;min-height:100vh;align-items:center;justify-content:center;background:#1a1a2e">
+  <div style="background:#fff;padding:32px;border-radius:8px;width:320px;box-shadow:0 4px 20px rgba(0,0,0,.3)">
+    <h2 style="margin:0 0 4px;color:#333">GST Platform</h2>
+    <p style="margin:0 0 20px;color:#888;font-size:13px">Admin Portal Login</p>
+    <div class="form-group"><label>Username</label><input id="login-user" placeholder="admin"></div>
+    <div class="form-group"><label>Password</label><input id="login-pass" type="password" placeholder="Password" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <p id="login-error" style="color:#dc3545;font-size:12px;margin:8px 0"></p>
+    <button class="success" onclick="doLogin()" style="width:100%;padding:10px">Login</button>
+  </div>
+</div>
 
-    <div class="section">
+<!-- APP SCREEN -->
+<div class="layout" id="app-screen" style="display:none">
+  <nav class="sidebar">
+    <h2>GST Platform</h2>
+    <a href="#" onclick="showSection('services')" class="active" id="nav-services">Services</a>
+    <a href="#" onclick="showSection('plans')" id="nav-plans">Plans</a>
+    <a href="#" onclick="showSection('customers')" id="nav-customers">Customers</a>
+    <a href="#" onclick="showSection('workflow')" id="nav-workflow">Workflow</a>
+    <a href="#" onclick="showSection('modules')" id="nav-modules">Modules</a>
+    <a href="#" onclick="showSection('sources')" id="nav-sources">Sources</a>
+    <a href="#" onclick="showSection('providers')" id="nav-providers">Providers</a>
+    <a href="#" onclick="showSection('integration')" id="nav-integration">Integration Guide</a>
+    <a href="#" onclick="doLogout()" style="margin-top:30px;color:#f88">Logout</a>
+  </nav>
+  <div class="main">
+    <h1>Admin Portal</h1>
+
+
+    <!-- SERVICES SECTION -->
+    <div class="section active" id="sec-services">
+      <h2>Platform Services</h2>
+      <p style="color:#666;font-size:13px">These are the services available via API to integrated clients.</p>
+      <div class="service-card">
+        <h4>HSN Code Lookup</h4>
+        <p>Get GST/tax rate for any HSN (Harmonised System of Nomenclature) code. Returns CGST, SGST, IGST rates.</p>
+        <p style="margin-top:6px"><code>GET /api/v1/hsn/:code</code> &nbsp; <code>GET /api/v1/hsn?rate=18</code></p>
+      </div>
+      <div class="service-card">
+        <h4>SAC Code Lookup</h4>
+        <p>Get GST rate for SAC (Services Accounting Code) for service-based businesses.</p>
+        <p style="margin-top:6px"><code>GET /api/v1/search?q=consulting</code></p>
+      </div>
+      <div class="service-card">
+        <h4>Product/Service Search</h4>
+        <p>Search HSN/SAC by product or service name. Supports auto-suggest for typeahead.</p>
+        <p style="margin-top:6px"><code>GET /api/v1/search?q=laptop</code> &nbsp; <code>GET /api/v1/suggest?q=mob</code></p>
+      </div>
+      <div class="service-card">
+        <h4>State-wise GST Rules</h4>
+        <p>Get state-specific GST rules, exemptions, and special rates by state code.</p>
+        <p style="margin-top:6px"><code>GET /api/v1/states/:stateCode/rules</code></p>
+      </div>
+      <div class="service-card">
+        <h4>GST Notifications</h4>
+        <p>Latest CBIC GST notifications, circulars, and rate changes.</p>
+        <p style="margin-top:6px"><code>GET /api/v1/notifications</code></p>
+      </div>
+    </div>
+
+
+    <!-- PLANS SECTION -->
+    <div class="section" id="sec-plans">
+      <h2>Plans <button onclick="showModal('create-plan-modal')">+ Create Plan</button></h2>
+      <p style="color:#666;font-size:13px">API access plans with rate limits and service permissions. Assign a plan when generating API keys.</p>
+      <div class="plan-grid" id="plans-grid"></div>
+      <h3>Plan Details</h3>
+      <table id="plans-table">
+        <thead><tr><th>Code</th><th>Name</th><th>Price</th><th>Requests/Hour</th><th>Requests/Month</th><th>Services Included</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- CUSTOMERS SECTION -->
+    <div class="section" id="sec-customers">
+      <h2>Customers <button onclick="showModal('create-customer-modal')">+ Add Customer</button></h2>
+      <p style="color:#666;font-size:13px">Manage client websites/businesses that consume your GST services via API.</p>
+      <table id="customers-table">
+        <thead><tr><th>Company</th><th>Email</th><th>Contact</th><th>Keys</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div id="customer-detail" style="display:none;margin-top:20px;border-top:2px solid #eee;padding-top:20px">
+        <h3 id="customer-detail-title"></h3>
+        <div class="tab-bar">
+          <button class="active" onclick="showCustomerTab('keys')">API Keys</button>
+          <button onclick="showCustomerTab('usage')">Usage</button>
+          <button onclick="showCustomerTab('subscription')">Subscription</button>
+        </div>
+        <div id="customer-tab-keys">
+          <button onclick="showModal('create-key-modal')" style="margin-bottom:12px">+ Generate API Key</button>
+          <table id="keys-table"><thead><tr><th>Prefix</th><th>Name</th><th>Plan</th><th>Status</th><th>Last Used</th><th>Actions</th></tr></thead><tbody></tbody></table>
+        </div>
+        <div id="customer-tab-usage" style="display:none">
+          <div class="stats-grid" id="usage-stats"></div>
+        </div>
+        <div id="customer-tab-subscription" style="display:none">
+          <div id="subscription-info" style="background:#f8f9fa;padding:16px;border-radius:8px;margin-bottom:16px"></div>
+          <button onclick="showModal('assign-plan-modal')">Assign/Change Plan</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- WORKFLOW -->
+    <div class="section" id="sec-workflow">
       <h2>Workflow Control</h2>
       <button class="success" onclick="runWorkflow()">Run Full Workflow</button>
       <p id="workflow-status"></p>
     </div>
 
-    <div class="section">
+    <!-- MODULES -->
+    <div class="section" id="sec-modules">
       <h2>Modules</h2>
-      <table id="modules-table">
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <table id="modules-table"><thead><tr><th>Code</th><th>Name</th><th>Status</th><th>Actions</th></tr></thead><tbody></tbody></table>
     </div>
 
-    <div class="section">
+    <!-- SOURCES -->
+    <div class="section" id="sec-sources">
       <h2>Sources</h2>
-      <table id="sources-table">
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Priority</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <table id="sources-table"><thead><tr><th>Code</th><th>Name</th><th>Type</th><th>Priority</th><th>Status</th><th>Actions</th></tr></thead><tbody></tbody></table>
     </div>
 
-    <div class="section">
-      <h2>Providers</h2>
-      <table id="providers-table">
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
+    <!-- PROVIDERS -->
+    <div class="section" id="sec-providers">
+      <h2>Providers <button onclick="showModal('create-provider-modal')">+ Add Provider</button></h2>
+      <p style="color:#666;font-size:13px">External data providers (OpenAI, Gemini, Claude, custom APIs) for intelligence and parsing services.</p>
+      <table id="providers-table"><thead><tr><th>Code</th><th>Name</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead><tbody></tbody></table>
+    </div>
+
+
+    <!-- INTEGRATION GUIDE -->
+    <div class="section" id="sec-integration">
+      <h2>Integration Guide</h2>
+      <p>Share this with client developers to integrate GST/tax services into their website.</p>
+      <h3>1. Authentication</h3>
+      <p>All requests need the <code>X-Api-Key</code> header with the key generated in Customers section.</p>
+      <pre><code>curl -H "X-Api-Key: gst_your_api_key_here" \
+  https://your-domain.com/api/v1/hsn/8471</code></pre>
+      <h3>2. Available Endpoints</h3>
+      <table>
+        <tr><th>Service</th><th>Endpoint</th><th>Description</th></tr>
+        <tr><td>HSN Lookup</td><td><code>GET /api/v1/hsn/:code</code></td><td>GST rate by HSN code</td></tr>
+        <tr><td>HSN by Rate</td><td><code>GET /api/v1/hsn?rate=18</code></td><td>All codes at given rate</td></tr>
+        <tr><td>Search</td><td><code>GET /api/v1/search?q=laptop</code></td><td>Search by product/service name</td></tr>
+        <tr><td>Suggest</td><td><code>GET /api/v1/suggest?q=mob</code></td><td>Typeahead suggestions</td></tr>
+        <tr><td>State Rules</td><td><code>GET /api/v1/states/:code/rules</code></td><td>State-specific rules</td></tr>
+        <tr><td>Notifications</td><td><code>GET /api/v1/notifications</code></td><td>Latest GST notifications</td></tr>
       </table>
+      <h3>3. Response Example</h3>
+      <pre><code>// GET /api/v1/hsn/8471
+{
+  "hsn": "8471",
+  "description": "Automatic data processing machines",
+  "gst_rate": 18,
+  "cgst": 9, "sgst": 9, "igst": 18,
+  "effective_from": "2017-07-01"
+}</code></pre>
+      <h3>4. JavaScript Example</h3>
+      <pre><code>const res = await fetch('https://your-domain.com/api/v1/hsn/8471', {
+  headers: { 'X-Api-Key': 'gst_your_key' }
+});
+const data = await res.json();
+const gstRate = data.gst_rate; // 18</code></pre>
+      <h3>5. Rate Limit Headers</h3>
+      <p>Every response includes <code>X-RateLimit-Limit</code> and <code>X-RateLimit-Remaining</code>.</p>
+    </div>
+
+
+  </div><!-- end .main -->
+</div><!-- end .layout / app-screen -->
+
+<!-- Create Customer Modal -->
+<div class="modal" id="create-customer-modal">
+  <div class="modal-content">
+    <h3>Add Customer</h3>
+    <div class="form-group"><label>Company Name</label><input id="c-company" placeholder="E-Commerce Store Pvt Ltd"></div>
+    <div class="form-group"><label>Email</label><input id="c-email" type="email" placeholder="admin@store.com"></div>
+    <div class="form-group"><label>Contact Person</label><input id="c-contact" placeholder="John Doe"></div>
+    <div class="form-group"><label>Phone</label><input id="c-phone" placeholder="9876543210"></div>
+    <button class="success" onclick="createCustomer()">Create</button>
+    <button onclick="hideModal('create-customer-modal')">Cancel</button>
+  </div>
+</div>
+
+<!-- Create API Key Modal -->
+<div class="modal" id="create-key-modal">
+  <div class="modal-content">
+    <h3>Generate API Key</h3>
+    <div class="form-group"><label>Key Name</label><input id="k-name" placeholder="Production Key"></div>
+    <div class="form-group"><label>Plan (determines rate limits & services)</label><select id="k-plan"></select></div>
+    <div id="k-plan-info" style="background:#f0f8ff;padding:10px;border-radius:4px;margin-bottom:12px;font-size:12px;display:none"></div>
+    <div class="form-group"><label>Expires In (days, blank = never)</label><input id="k-expires" type="number" placeholder="365"></div>
+    <button class="success" onclick="createKey()">Generate Key</button>
+    <button onclick="hideModal('create-key-modal')">Cancel</button>
+  </div>
+</div>
+
+<!-- Show Generated Key Modal -->
+<div class="modal" id="show-key-modal">
+  <div class="modal-content">
+    <h3>API Key Generated</h3>
+    <p style="color:#dc3545;font-weight:bold">Copy this key now. It will NOT be shown again.</p>
+    <div class="api-key-display" id="generated-key"></div>
+    <p style="font-size:12px;color:#666" id="generated-key-info"></p>
+    <button onclick="copyKey()">Copy Key</button>
+    <button onclick="hideModal('show-key-modal')">Close</button>
+  </div>
+</div>
+
+
+<!-- Create Plan Modal -->
+<div class="modal" id="create-plan-modal">
+  <div class="modal-content">
+    <h3>Create New Plan</h3>
+    <div class="form-group"><label>Plan Code (unique)</label><input id="p-code" placeholder="basic"></div>
+    <div class="form-group"><label>Plan Name</label><input id="p-name" placeholder="Basic Plan"></div>
+    <div class="form-group"><label>Description</label><input id="p-desc" placeholder="For small businesses"></div>
+    <div class="form-group"><label>Price (INR/month)</label><input id="p-price" type="number" placeholder="999"></div>
+    <div class="form-group"><label>Billing Cycle</label>
+      <select id="p-cycle"><option value="monthly">Monthly</option><option value="annual">Annual</option></select>
+    </div>
+    <h4 style="margin:12px 0 8px;font-size:13px">Rate Limits</h4>
+    <div class="form-group"><label>Requests/Hour</label><input id="p-rph" type="number" placeholder="1000"></div>
+    <div class="form-group"><label>Requests/Day</label><input id="p-rpd" type="number" placeholder="10000"></div>
+    <div class="form-group"><label>Requests/Month</label><input id="p-rpm" type="number" placeholder="100000"></div>
+    <h4 style="margin:12px 0 8px;font-size:13px">Services Included</h4>
+    <div class="checkbox-grid">
+      <label><input type="checkbox" id="p-svc-hsn" checked> HSN Lookup</label>
+      <label><input type="checkbox" id="p-svc-sac" checked> SAC Lookup</label>
+      <label><input type="checkbox" id="p-svc-search" checked> Product Search</label>
+      <label><input type="checkbox" id="p-svc-states" checked> State Rules</label>
+      <label><input type="checkbox" id="p-svc-notif" checked> Notifications</label>
+      <label><input type="checkbox" id="p-svc-suggest" checked> Auto-Suggest</label>
+    </div>
+    <div style="margin-top:16px">
+      <button class="success" onclick="createPlan()">Create Plan</button>
+      <button onclick="hideModal('create-plan-modal')">Cancel</button>
     </div>
   </div>
+</div>
 
-  <script>
-    async function loadModules() {
-      const res = await fetch('/api/modules');
-      const modules = await res.json();
-      const tbody = document.querySelector('#modules-table tbody');
-      tbody.innerHTML = modules.map(m => `
-        <tr>
-          <td>${m.code}</td>
-          <td>${m.name}</td>
-          <td><span class="status ${m.enabled ? 'enabled' : 'disabled'}">${m.enabled ? 'Enabled' : 'Disabled'}</span></td>
-          <td>
-            ${m.enabled 
-              ? `<button class="danger" onclick="toggleModule('${m.code}', false)">Disable</button>`
-              : `<button class="success" onclick="toggleModule('${m.code}', true)">Enable</button>`
-            }
-          </td>
-        </tr>
-      `).join('');
+<!-- Create Provider Modal -->
+<div class="modal" id="create-provider-modal">
+  <div class="modal-content">
+    <h3>Add Provider</h3>
+    <div class="form-group"><label>Provider Code (unique)</label><input id="prov-code" placeholder="openai"></div>
+    <div class="form-group"><label>Provider Name</label><input id="prov-name" placeholder="OpenAI GPT"></div>
+    <div class="form-group"><label>Provider Type</label>
+      <select id="prov-type">
+        <option value="llm">LLM (Language Model)</option>
+        <option value="ocr">OCR (Document Parser)</option>
+        <option value="embedding">Embedding Service</option>
+        <option value="api">Custom API</option>
+      </select>
+    </div>
+    <div class="form-group"><label>API Key</label><input id="prov-apikey" type="password" placeholder="sk-..."></div>
+    <div class="form-group"><label>API Endpoint (optional)</label><input id="prov-endpoint" placeholder="https://api.openai.com/v1"></div>
+    <div class="form-group"><label>Model/Version</label><input id="prov-model" placeholder="gpt-4"></div>
+    <button class="success" onclick="createProvider()">Add Provider</button>
+    <button onclick="hideModal('create-provider-modal')">Cancel</button>
+  </div>
+</div>
+
+<!-- Assign Plan Modal -->
+<div class="modal" id="assign-plan-modal">
+  <div class="modal-content">
+    <h3>Assign Plan</h3>
+    <div class="form-group">
+      <label>Select Plan</label>
+      <select id="assign-plan-select"></select>
+    </div>
+    <div id="assign-plan-info" style="background:#f0f8ff;padding:10px;border-radius:4px;margin:12px 0;font-size:12px"></div>
+    <div class="form-group">
+      <label>Payment Status</label>
+      <select id="payment-status">
+        <option value="trial">Free Trial (7 days)</option>
+        <option value="paid">Paid (Manual Invoice)</option>
+        <option value="pending">Pending Payment</option>
+      </select>
+    </div>
+    <p style="font-size:12px;color:#666">Note: For automatic payment collection, integrate Razorpay/Stripe (see PAYMENT_INTEGRATION.md)</p>
+    <button class="success" onclick="assignPlan()">Assign Plan</button>
+    <button onclick="hideModal('assign-plan-modal')">Cancel</button>
+  </div>
+</div>
+
+
+<script>
+let selectedCustomerId = null;
+let plansCache = [];
+let authToken = sessionStorage.getItem('admin_token') || null;
+
+// AUTH
+function authHeaders() { return { 'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/json' }; }
+function authFetch(url, opts = {}) {
+  opts.headers = { ...opts.headers, 'Authorization': 'Bearer ' + authToken };
+  return fetch(url, opts).then(r => { if(r.status===401){ showLogin(); throw new Error('Unauthorized'); } return r; });
+}
+
+function showLogin() {
+  authToken = null; sessionStorage.removeItem('admin_token');
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('app-screen').style.display = 'none';
+}
+function showApp() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app-screen').style.display = 'flex';
+  loadModules(); loadSources(); loadProviders();
+}
+async function doLogin() {
+  const u = document.getElementById('login-user').value;
+  const p = document.getElementById('login-pass').value;
+  const err = document.getElementById('login-error');
+  err.textContent = '';
+  const res = await fetch('/api/login', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({username:u,password:p}) });
+  if(res.ok){ const d=await res.json(); authToken=d.token; sessionStorage.setItem('admin_token',authToken); showApp(); }
+  else { err.textContent='Invalid credentials'; }
+}
+async function doLogout() {
+  await fetch('/api/logout',{method:'POST',headers:authHeaders()}).catch(()=>{});
+  showLogin();
+}
+
+// Check session on load
+if(authToken) {
+  fetch('/api/modules',{headers:{'Authorization':'Bearer '+authToken}}).then(r=>{if(r.ok)showApp();else showLogin();}).catch(()=>showLogin());
+} else { showLogin(); }
+
+function showSection(name) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+  document.getElementById('sec-' + name).classList.add('active');
+  document.getElementById('nav-' + name).classList.add('active');
+  if (name === 'customers') loadCustomers();
+  if (name === 'plans') loadPlans();
+}
+function showModal(id) { document.getElementById(id).classList.add('show'); }
+function hideModal(id) { document.getElementById(id).classList.remove('show'); }
+
+// PLANS
+async function loadPlans() {
+  const res = await authFetch('/api/plans');
+  plansCache = await res.json();
+  // Plan cards
+  document.getElementById('plans-grid').innerHTML = plansCache.map(p => {
+    const l = p.limits || {};
+    return `<div class="plan-card">
+      <h4>${p.name}</h4>
+      <div class="price">&#8377;${p.base_price}</div>
+      <div class="period">per ${p.billing_cycle}</div>
+      <p style="font-size:11px;color:#666;margin:8px 0">${p.description||''}</p>
+      <div style="font-size:11px;text-align:left">
+        <div>${l.requests_per_hour||'--'} req/hour</div>
+        <div>${l.requests_per_month>0?Number(l.requests_per_month).toLocaleString():'Unlimited'} req/month</div>
+      </div>
+    </div>`;
+  }).join('');
+  // Plan table
+  document.querySelector('#plans-table tbody').innerHTML = plansCache.map(p => {
+    const l = p.limits || {};
+    const f = p.features || {};
+    const services = [];
+    if(f.hsn_lookup!==false) services.push('HSN');
+    if(f.sac_lookup!==false) services.push('SAC');
+    if(f.search!==false) services.push('Search');
+    if(f.state_rules!==false) services.push('States');
+    if(f.notifications!==false) services.push('Notifications');
+    // Default: all services included unless explicitly disabled
+    const svcHtml = (services.length||!Object.keys(f).length)
+      ? '<span class="badge blue">All Services</span>'
+      : services.map(s=>`<span class="badge blue">${s}</span>`).join('');
+    return `<tr><td>${p.code}</td><td>${p.name}</td><td>&#8377;${p.base_price}/${p.billing_cycle}</td>
+      <td>${l.requests_per_hour||'--'}</td><td>${l.requests_per_month>0?Number(l.requests_per_month).toLocaleString():'Unlimited'}</td>
+      <td>${svcHtml}</td><td><span class="status ${p.active?'active':'disabled'}">${p.active?'Active':'Inactive'}</span></td></tr>`;
+  }).join('');
+  populatePlanSelect();
+}
+
+
+function populatePlanSelect() {
+  const sel = document.getElementById('k-plan');
+  sel.innerHTML = plansCache.map(p =>
+    `<option value="${p.id}">${p.name} — &#8377;${p.base_price}/${p.billing_cycle}</option>`
+  ).join('');
+  sel.onchange = () => showPlanInfo(sel.value);
+  if(plansCache.length) showPlanInfo(plansCache[0].id);
+}
+
+function showPlanInfo(planId) {
+  const p = plansCache.find(x => x.id === planId);
+  const info = document.getElementById('k-plan-info');
+  if(!p){info.style.display='none';return;}
+  const l = p.limits||{};
+  info.style.display='block';
+  info.innerHTML = `<strong>${p.name}</strong>: ${l.requests_per_hour||'--'} req/hr, ${l.requests_per_month>0?Number(l.requests_per_month).toLocaleString():'Unlimited'} req/month<br>
+    <strong>Services:</strong> HSN Lookup, SAC Lookup, Product Search, State Rules, Notifications`;
+}
+
+async function createPlan() {
+  const services = {
+    hsn_lookup: document.getElementById('p-svc-hsn').checked,
+    sac_lookup: document.getElementById('p-svc-sac').checked,
+    search: document.getElementById('p-svc-search').checked,
+    state_rules: document.getElementById('p-svc-states').checked,
+    notifications: document.getElementById('p-svc-notif').checked,
+    suggest: document.getElementById('p-svc-suggest').checked
+  };
+  const body = {
+    code: document.getElementById('p-code').value,
+    name: document.getElementById('p-name').value,
+    description: document.getElementById('p-desc').value,
+    base_price: parseFloat(document.getElementById('p-price').value) || 0,
+    billing_cycle: document.getElementById('p-cycle').value,
+    limits: {
+      requests_per_hour: parseInt(document.getElementById('p-rph').value) || 100,
+      requests_per_day: parseInt(document.getElementById('p-rpd').value) || 1000,
+      requests_per_month: parseInt(document.getElementById('p-rpm').value) || 10000
+    },
+    features: services
+  };
+  const res = await authFetch('/api/plans', { method:'POST', headers:authHeaders(), body:JSON.stringify(body) });
+  if(res.ok){ hideModal('create-plan-modal'); loadPlans(); }
+  else { const e = await res.json(); alert(e.error||'Failed'); }
+}
+
+
+// CUSTOMERS
+async function loadCustomers() {
+  const res = await authFetch('/api/customers');
+  const customers = await res.json();
+  if(!plansCache.length){ const r=await authFetch('/api/plans'); plansCache=await r.json(); populatePlanSelect(); }
+  document.querySelector('#customers-table tbody').innerHTML = customers.map(c => `
+    <tr><td>${c.company_name}</td><td>${c.email}</td><td>${c.contact_person||'-'}</td>
+    <td>${c.api_keys_count||0}</td>
+    <td><span class="status ${c.status}">${c.status}</span></td>
+    <td>
+      <button onclick="selectCustomer('${c.id}','${c.company_name}')">Manage</button>
+      ${c.status==='active'
+        ? `<button class="danger" onclick="suspendCustomer('${c.id}')">Suspend</button>`
+        : `<button class="success" onclick="activateCustomer('${c.id}')">Activate</button>`}
+    </td></tr>`).join('');
+}
+
+async function createCustomer() {
+  const body = {
+    company_name: document.getElementById('c-company').value,
+    email: document.getElementById('c-email').value,
+    contact_person: document.getElementById('c-contact').value,
+    phone: document.getElementById('c-phone').value
+  };
+  await authFetch('/api/customers', { method:'POST', headers:authHeaders(), body:JSON.stringify(body) });
+  hideModal('create-customer-modal');
+  loadCustomers();
+}
+
+async function suspendCustomer(id) {
+  if(!confirm('Suspend this customer? Their API keys will stop working.')) return;
+  await authFetch(`/api/customers/${id}/suspend`, { method:'POST' });
+  loadCustomers();
+}
+async function activateCustomer(id) {
+  await authFetch(`/api/customers/${id}/activate`, { method:'POST' });
+  loadCustomers();
+}
+
+// CUSTOMER DETAIL
+async function selectCustomer(id, name) {
+  selectedCustomerId = id;
+  document.getElementById('customer-detail').style.display = 'block';
+  document.getElementById('customer-detail-title').textContent = name;
+  showCustomerTab('keys');
+  loadKeys();
+  loadUsage();
+}
+
+function showCustomerTab(tab) {
+  document.getElementById('customer-tab-keys').style.display = tab==='keys'?'block':'none';
+  document.getElementById('customer-tab-usage').style.display = tab==='usage'?'block':'none';
+  document.getElementById('customer-tab-subscription').style.display = tab==='subscription'?'block':'none';
+  document.querySelectorAll('#customer-detail .tab-bar button').forEach((b,i) => {
+    b.classList.toggle('active', (i===0&&tab==='keys')||(i===1&&tab==='usage')||(i===2&&tab==='subscription'));
+  });
+  if (tab === 'subscription') loadSubscription();
+}
+
+
+// API KEYS
+async function loadKeys() {
+  const res = await authFetch(`/api/customers/${selectedCustomerId}/keys`);
+  const keys = await res.json();
+  document.querySelector('#keys-table tbody').innerHTML = keys.map(k => {
+    const plan = plansCache.find(p=>p.id===k.plan_id);
+    return `<tr><td><code>${k.key_prefix}...</code></td><td>${k.name||'-'}</td>
+    <td>${plan?plan.name:'-'}</td>
+    <td><span class="status ${k.status}">${k.status}</span></td>
+    <td>${k.last_used_at?new Date(k.last_used_at).toLocaleDateString():'Never'}</td>
+    <td>${k.status==='active'?`<button class="danger" onclick="revokeKey('${k.id}')">Revoke</button>`:''}</td></tr>`;
+  }).join('');
+}
+
+async function createKey() {
+  const planId = document.getElementById('k-plan').value;
+  const body = {
+    name: document.getElementById('k-name').value,
+    plan_id: planId,
+    expires_in_days: parseInt(document.getElementById('k-expires').value) || null
+  };
+  const res = await authFetch(`/api/customers/${selectedCustomerId}/keys`, {
+    method:'POST', headers:authHeaders(), body:JSON.stringify(body)
+  });
+  const data = await res.json();
+  hideModal('create-key-modal');
+  if(data.key) {
+    document.getElementById('generated-key').textContent = data.key;
+    const plan = plansCache.find(p=>p.id===planId);
+    document.getElementById('generated-key-info').textContent = plan
+      ? `Plan: ${plan.name} | Services: HSN, SAC, Search, States, Notifications`
+      : '';
+    showModal('show-key-modal');
+  } else {
+    alert(data.error||'Failed to generate key');
+  }
+  loadKeys();
+}
+
+function copyKey() {
+  navigator.clipboard.writeText(document.getElementById('generated-key').textContent);
+}
+
+async function revokeKey(id) {
+  if(!confirm('Revoke this key? It will immediately stop working.')) return;
+  await authFetch(`/api/keys/${id}`, { method:'DELETE' });
+  loadKeys();
+}
+
+// USAGE
+async function loadUsage() {
+  const res = await authFetch(`/api/customers/${selectedCustomerId}/usage/current`);
+  const u = await res.json();
+  document.getElementById('usage-stats').innerHTML = `
+    <div class="stat-card"><div class="value">${(u.total_requests||0).toLocaleString()}</div><div class="label">Requests This Month</div></div>
+    <div class="stat-card"><div class="value">${u.avg_response_time||0}ms</div><div class="label">Avg Response Time</div></div>
+    <div class="stat-card"><div class="value">${(u.successful_requests||0).toLocaleString()}</div><div class="label">Successful</div></div>
+    <div class="stat-card"><div class="value">${(u.failed_requests||0).toLocaleString()}</div><div class="label">Failed</div></div>`;
+}
+
+// SUBSCRIPTION
+async function loadSubscription() {
+  const res = await authFetch(`/api/customers/${selectedCustomerId}/subscription`);
+  const sub = await res.json();
+  const info = document.getElementById('subscription-info');
+  
+  if (sub.subscription) {
+    const s = sub.subscription;
+    const plan = plansCache.find(p => p.id === s.plan_id);
+    info.innerHTML = `
+      <h4 style="margin:0 0 8px">Current Plan: ${plan ? plan.name : 'Unknown'}</h4>
+      <p style="margin:4px 0;font-size:13px"><strong>Status:</strong> <span class="status ${s.status}">${s.status}</span></p>
+      <p style="margin:4px 0;font-size:13px"><strong>Period:</strong> ${new Date(s.current_period_start).toLocaleDateString()} - ${new Date(s.current_period_end).toLocaleDateString()}</p>
+      <p style="margin:4px 0;font-size:13px"><strong>Price:</strong> ₹${plan ? plan.base_price : 0}/${plan ? plan.billing_cycle : 'month'}</p>
+    `;
+  } else {
+    info.innerHTML = '<p style="color:#666">No active subscription. Assign a plan to activate services.</p>';
+  }
+  
+  // Populate plan select
+  const sel = document.getElementById('assign-plan-select');
+  sel.innerHTML = plansCache.map(p => 
+    `<option value="${p.id}" ${sub.subscription && sub.subscription.plan_id === p.id ? 'selected' : ''}>
+      ${p.name} — ₹${p.base_price}/${p.billing_cycle}
+    </option>`
+  ).join('');
+  sel.onchange = () => showAssignPlanInfo(sel.value);
+  if (plansCache.length) showAssignPlanInfo(sel.value);
+}
+
+function showAssignPlanInfo(planId) {
+  const plan = plansCache.find(p => p.id === planId);
+  const info = document.getElementById('assign-plan-info');
+  if (!plan) return;
+  const l = plan.limits || {};
+  info.innerHTML = `
+    <strong>${plan.name}</strong> — ₹${plan.base_price}/${plan.billing_cycle}<br>
+    <strong>Limits:</strong> ${l.requests_per_hour || '--'} req/hr, ${l.requests_per_month > 0 ? Number(l.requests_per_month).toLocaleString() : 'Unlimited'} req/month<br>
+    <strong>Services:</strong> All GST API services included
+  `;
+}
+
+async function assignPlan() {
+  const planId = document.getElementById('assign-plan-select').value;
+  const paymentStatus = document.getElementById('payment-status').value;
+  
+  const res = await authFetch(`/api/customers/${selectedCustomerId}/subscription`, {
+    method: 'POST',
+    headers: authHeaders(),
+    body: JSON.stringify({ plan_id: planId, payment_status: paymentStatus })
+  });
+  
+  if (res.ok) {
+    hideModal('assign-plan-modal');
+    loadSubscription();
+    alert('Plan assigned successfully!');
+  } else {
+    const err = await res.json();
+    alert('Error: ' + (err.error || 'Failed'));
+  }
+}
+
+
+// MODULES, SOURCES, PROVIDERS
+async function loadModules() {
+  const res = await authFetch('/api/modules');
+  const modules = await res.json();
+  document.querySelector('#modules-table tbody').innerHTML = modules.map(m => `
+    <tr><td>${m.code}</td><td>${m.name}</td>
+    <td><span class="status ${m.enabled?'enabled':'disabled'}">${m.enabled?'Enabled':'Disabled'}</span></td>
+    <td>${m.enabled
+      ? `<button class="danger" onclick="toggleModule('${m.code}',false)">Disable</button>`
+      : `<button class="success" onclick="toggleModule('${m.code}',true)">Enable</button>`}</td></tr>`).join('');
+}
+async function toggleModule(code, enable) {
+  await authFetch(`/api/modules/${code}/${enable?'enable':'disable'}`, { method:'POST' });
+  loadModules();
+}
+async function loadSources() {
+  const res = await authFetch('/api/sources');
+  const sources = await res.json();
+  document.querySelector('#sources-table tbody').innerHTML = sources.map(s => `
+    <tr><td>${s.code}</td><td>${s.name}</td><td>${s.type}</td><td>${s.priority}</td>
+    <td><span class="status ${s.enabled?'enabled':'disabled'}">${s.enabled?'Enabled':'Disabled'}</span></td>
+    <td>${s.enabled
+      ? `<button class="danger" onclick="toggleSource('${s.code}',false)">Disable</button>`
+      : `<button class="success" onclick="toggleSource('${s.code}',true)">Enable</button>`}</td></tr>`).join('');
+}
+async function toggleSource(code, enable) {
+  await authFetch(`/api/sources/${code}/${enable?'enable':'disable'}`, { method:'POST' });
+  loadSources();
+}
+async function loadProviders() {
+  const res = await authFetch('/api/providers');
+  const providers = await res.json();
+  document.querySelector('#providers-table tbody').innerHTML = providers.map(p => `
+    <tr><td>${p.code}</td><td>${p.name}</td><td>${p.type}</td>
+    <td><span class="status ${p.enabled?'enabled':'disabled'}">${p.enabled?'Enabled':'Disabled'}</span></td>
+    <td>${p.enabled
+      ? `<button class="danger" onclick="toggleProvider('${p.code}',false)">Disable</button>`
+      : `<button class="success" onclick="toggleProvider('${p.code}',true)">Enable</button>`}</td></tr>`).join('');
+}
+async function createProvider() {
+  const body = {
+    code: document.getElementById('prov-code').value,
+    name: document.getElementById('prov-name').value,
+    type: document.getElementById('prov-type').value,
+    configuration: {
+      api_key: document.getElementById('prov-apikey').value,
+      endpoint: document.getElementById('prov-endpoint').value,
+      model: document.getElementById('prov-model').value
     }
+  };
+  const res = await authFetch('/api/providers', { method:'POST', headers:authHeaders(), body:JSON.stringify(body) });
+  if(res.ok){ hideModal('create-provider-modal'); loadProviders(); }
+  else { const e = await res.json(); alert(e.error||'Failed'); }
+}
+async function toggleProvider(code, enable) {
+  await authFetch(`/api/providers/${code}/${enable?'enable':'disable'}`, { method:'POST' });
+  loadProviders();
+}
+async function runWorkflow() {
+  const s = document.getElementById('workflow-status');
+  s.textContent = 'Running...';
+  try { await authFetch('/api/workflow/run',{method:'POST'}); s.textContent='Workflow completed.'; }
+  catch(e){ s.textContent='Error: '+e.message; }
+}
 
-    async function loadSources() {
-      const res = await fetch('/api/sources');
-      const sources = await res.json();
-      const tbody = document.querySelector('#sources-table tbody');
-      tbody.innerHTML = sources.map(s => `
-        <tr>
-          <td>${s.code}</td>
-          <td>${s.name}</td>
-          <td>${s.type}</td>
-          <td>${s.priority}</td>
-          <td><span class="status ${s.enabled ? 'enabled' : 'disabled'}">${s.enabled ? 'Enabled' : 'Disabled'}</span></td>
-          <td>
-            ${s.enabled 
-              ? `<button class="danger" onclick="toggleSource('${s.code}', false)">Disable</button>`
-              : `<button class="success" onclick="toggleSource('${s.code}', true)">Enable</button>`
-            }
-          </td>
-        </tr>
-      `).join('');
-    }
-
-    async function loadProviders() {
-      const res = await fetch('/api/providers');
-      const providers = await res.json();
-      const tbody = document.querySelector('#providers-table tbody');
-      tbody.innerHTML = providers.map(p => `
-        <tr>
-          <td>${p.code}</td>
-          <td>${p.name}</td>
-          <td>${p.type}</td>
-          <td><span class="status ${p.enabled ? 'enabled' : 'disabled'}">${p.enabled ? 'Enabled' : 'Disabled'}</span></td>
-        </tr>
-      `).join('');
-    }
-
-    async function toggleModule(code, enable) {
-      const action = enable ? 'enable' : 'disable';
-      await fetch(`/api/modules/${code}/${action}`, { method: 'POST' });
-      loadModules();
-    }
-
-    async function toggleSource(code, enable) {
-      const action = enable ? 'enable' : 'disable';
-      await fetch(`/api/sources/${code}/${action}`, { method: 'POST' });
-      loadSources();
-    }
-
-    async function runWorkflow() {
-      const status = document.getElementById('workflow-status');
-      status.textContent = 'Running workflow...';
-      try {
-        const res = await fetch('/api/workflow/run', { method: 'POST' });
-        const result = await res.json();
-        status.textContent = `Workflow completed: ${JSON.stringify(result.results)}`;
-      } catch (error) {
-        status.textContent = `Error: ${error.message}`;
-      }
-    }
-
-    loadModules();
-    loadSources();
-    loadProviders();
-  </script>
+// INIT
+loadModules(); loadSources(); loadProviders();
+</script>
 </body>
 </html>

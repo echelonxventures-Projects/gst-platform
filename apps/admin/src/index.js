@@ -1,4 +1,5 @@
 import express from 'express';
+import crypto from 'crypto';
 import { moduleRegistry } from '@gst-platform/registry-engine/modules';
 import { sourceRegistry } from '@gst-platform/registry-engine/sources';
 import { providerRegistry } from '@gst-platform/registry-engine/providers';
@@ -11,6 +12,52 @@ import { db } from '@gst-platform/core/db';
 
 const app = express();
 app.use(express.json());
+
+const ADMIN_USER = process.env.ADMIN_USER || 'admin';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin@gst2024';
+const SESSION_SECRET = process.env.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
+
+// Session store (in-memory, sufficient for single-instance admin)
+const sessions = new Map();
+
+function createSession() {
+  const token = crypto.randomBytes(32).toString('hex');
+  sessions.set(token, { created: Date.now() });
+  return token;
+}
+
+function validSession(token) {
+  const s = sessions.get(token);
+  if (!s) return false;
+  // 8 hour expiry
+  if (Date.now() - s.created > 8 * 60 * 60 * 1000) { sessions.delete(token); return false; }
+  return true;
+}
+
+// Login endpoint (no auth required)
+app.post('/api/login', (req, res) => {
+  const { username, password } = req.body;
+  if (username === ADMIN_USER && password === ADMIN_PASSWORD) {
+    const token = createSession();
+    res.json({ token });
+  } else {
+    res.status(401).json({ error: 'Invalid credentials' });
+  }
+});
+
+// Serve login page without auth
+app.get('/login.html', (req, res, next) => { next(); });
+
+// Auth middleware for all /api/* (except login)
+app.use('/api', (req, res, next) => {
+  if (req.path === '/login') return next();
+  const token = req.headers['authorization']?.replace('Bearer ', '');
+  if (!token || !validSession(token)) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  next();
+});
+
 app.use(express.static('public'));
 
 // Modules management
@@ -108,6 +155,24 @@ app.post('/api/providers', async (req, res) => {
   }
 });
 
+app.post('/api/providers/:code/enable', async (req, res) => {
+  try {
+    await providerRegistry.enable(req.params.code);
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/providers/:code/disable', async (req, res) => {
+  try {
+    await providerRegistry.disable(req.params.code);
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Workflow triggers
 app.post('/api/workflow/run', async (req, res) => {
   try {
@@ -180,7 +245,7 @@ app.post('/api/customers/:id/activate', async (req, res) => {
 app.get('/api/customers/:id/keys', async (req, res) => {
   try {
     const keys = await db.query(
-      'SELECT id, key_prefix, name, status, rate_limit, created_at, last_used_at FROM billing.api_keys WHERE customer_id = $1',
+      'SELECT id, key_prefix, name, plan_id, status, created_at, last_used_at FROM billing.api_keys WHERE customer_id = $1',
       [req.params.id]
     );
     res.json(keys.rows);
@@ -242,6 +307,89 @@ app.get('/api/plans', async (req, res) => {
   try {
     const plans = await customerService.getPlans();
     res.json(plans);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/plans', async (req, res) => {
+  try {
+    const { code, name, description, base_price, billing_cycle, limits, features } = req.body;
+    const result = await db.query(
+      `INSERT INTO billing.plans (code, name, description, base_price, billing_cycle, limits, features)
+       VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
+      [code, name, description, base_price || 0, billing_cycle || 'monthly', JSON.stringify(limits || {}), JSON.stringify(features || {})]
+    );
+    res.json(result.rows[0]);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Subscription Management
+app.get('/api/customers/:id/subscription', async (req, res) => {
+  try {
+    const result = await db.query(
+      `SELECT s.*, p.name as plan_name, p.base_price, p.billing_cycle, p.limits, p.features
+       FROM billing.subscriptions s
+       JOIN billing.plans p ON s.plan_id = p.id
+       WHERE s.customer_id = $1 AND s.status IN ('active', 'trialing')
+       ORDER BY s.created_at DESC
+       LIMIT 1`,
+      [req.params.id]
+    );
+    res.json({ subscription: result.rows[0] || null });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/customers/:id/subscription', async (req, res) => {
+  try {
+    const { plan_id, payment_status } = req.body;
+    
+    // Cancel existing active subscriptions
+    await db.query(
+      `UPDATE billing.subscriptions 
+       SET status = 'cancelled', cancel_at = CURRENT_DATE
+       WHERE customer_id = $1 AND status IN ('active', 'trialing')`,
+      [req.params.id]
+    );
+    
+    // Calculate period dates
+    const periodStart = new Date();
+    const periodEnd = new Date();
+    periodEnd.setMonth(periodEnd.getMonth() + 1);
+    
+    // Determine status based on payment
+    let status = 'active';
+    let trialEnd = null;
+    if (payment_status === 'trial') {
+      status = 'trialing';
+      trialEnd = new Date();
+      trialEnd.setDate(trialEnd.getDate() + 7); // 7 day trial
+    } else if (payment_status === 'pending') {
+      status = 'past_due';
+    }
+    
+    // Create new subscription
+    const result = await db.query(
+      `INSERT INTO billing.subscriptions 
+       (customer_id, plan_id, status, current_period_start, current_period_end, trial_end, metadata)
+       VALUES ($1, $2, $3, $4, $5, $6, $7)
+       RETURNING *`,
+      [
+        req.params.id,
+        plan_id,
+        status,
+        periodStart,
+        periodEnd,
+        trialEnd,
+        JSON.stringify({ payment_method: payment_status === 'paid' ? 'manual' : payment_status })
+      ]
+    );
+    
+    res.json(result.rows[0]);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -406,6 +554,12 @@ app.get('/api/customers/:id/referrals', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+app.post('/api/logout', (req, res) => {
+  const token = req.headers['authorization']?.replace('Bearer ', '');
+  if (token) sessions.delete(token);
+  res.json({ success: true });
 });
 
 const PORT = parseInt(process.env.ADMIN_PORT) || 3001;
